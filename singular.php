@@ -36,12 +36,14 @@
 					<main>
 
 						<article>
-							
-							<div class="article-heading">
 
-								<div class="article-heading-img-wrap" style="background-image: url(<?= THEME_URL; ?>/assets/img/articles/article1.jpg);"></div>
+							<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-								<h2>Nolestie altricies porta urna tibulum commodo volutpat lorem ipsum</h2>
+								<?php $article_img = get_field('article-img');  ?>
+
+								<div class="article-heading-img-wrap" style="background-image: url(<?php echo $article_img['url']; ?>);"></div>
+
+								<h2><?= the_title(); ?></h2>
 
 								<div class="article-heading-social">
 
@@ -52,37 +54,15 @@
 									
 								</div>
 
-							</div>
+								<p class="lead">
 
-							<p class="featured">
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue vehicula gravida. Nulla sit amet sagittis felis. Donec maximus porta ipsum id ornare. Pellentesque vestibulum orci eu ipsum varius, rutrum consequat magna efficitur. Integer hendrerit ligula sem, ac hendrerit ex tristique sed. In at fermentum nibh, ac tempus lorem. Sed sit amet fermentum nibh. Vestibulum scelerisque posuere bibendum. Aliquam erat volutpat. 
-							</p>
+									<?= the_field('lead'); ?>
 
-							<p>
-								Nullam et varius tortor, quis dignissim velit. Phasellus sit amet euismod massa, sit amet sodales sem. Vestibulum consectetur justo at dolor tincidunt, nec pretium libero euismod. Ut ac pharetra mi. Morbi arcu nibh, dictum ac congue ut, blandit blandit mauris. Aliquam velit tortor, tristique et fringilla eu, tempus sit amet mi. Nullam porta felis quis lacus elementum, nec porta quam maximus. Pellentesque vel metus vehicula, dignissim diam sit amet, molestie eros. Sed dui massa, faucibus vel convallis vitae, mattis in nisl. 
-							</p>
+								</p>
 
-							<p class="align-left">
-								<img src="<?= THEME_URL; ?>/assets/img/articles/article-p.jpg" alt="Article img">
+								<?php the_content(); ?>								
 
-								Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed congue vehicula gravida. Nulla sit amet sagittis felis. Donec maximus porta ipsum id ornare. Pellentesque vestibulum orci eu ipsum varius, rutrum consequat magna efficitur. Integer hendrerit ligula sem, ac hendrerit ex tristique sed. In at fermentum nibh, ac tempus lorem. Sed sit amet fermentum nibh. Vestibulum scelerisque posuere bibendum. Aliquam erat volutpat. 
-							</p>
-
-
-							<p>
-								Nullam et varius tortor, quis dignissim velit. Phasellus sit amet euismod massa, sit amet sodales sem. Vestibulum consectetur justo at dolor tincidunt, nec pretium libero euismod. Ut ac pharetra mi. Morbi arcu nibh, dictum ac congue ut, blandit blandit mauris. Aliquam velit tortor, tristique et fringilla eu, tempus sit amet mi. Nullam porta felis quis lacus elementum, nec porta quam maximus. Pellentesque vel metus vehicula, dignissim diam sit amet, molestie eros. Sed dui massa, faucibus vel convallis vitae, mattis in nisl. 
-							</p>
-
-							<blockquote>
-								Dbaj o Zdrowie! <br />
-								Wysiłek to zdrowie
-							</blockquote>
-
-							<h3>Nullam et varius tortor</h3>
-
-							<p>
-								Nullam et varius tortor, quis dignissim velit. Phasellus sit amet euismod massa, sit amet sodales sem. Vestibulum consectetur justo at dolor tincidunt, nec pretium libero euismod. Ut ac pharetra mi. Morbi arcu nibh, dictum ac congue ut, blandit blandit mauris. Aliquam velit tortor, tristique et fringilla eu, tempus sit amet mi. Nullam porta felis quis lacus elementum, nec porta quam maximus. Pellentesque vel metus vehicula, dignissim diam sit amet, molestie eros. Sed dui massa, faucibus vel convallis vitae, mattis in nisl. Nullam et varius tortor, quis dignissim velit. Phasellus sit amet euismod massa, sit amet sodales sem. Vestibulum consectetur justo at dolor tincidunt, nec pretium libero euismod. Ut ac pharetra mi. Morbi arcu nibh, dictum ac congue ut, blandit blandit mauris.
-							</p>
+							<?php endwhile; endif; ?>
 
 							<a href="#" class="btn btn-transparent">Wróć</a>
 

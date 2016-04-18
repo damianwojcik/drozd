@@ -1,14 +1,31 @@
 <?php get_header(); ?>
 
+
 		<section class="slider animation-element" data-anim="slide_top">
 
 			<div class="owl-carousel">
 
+				<?php
+
+					// check if the repeater field has rows of data
+					if( have_rows('slides') ):
+
+					 	// loop through the rows of data
+					    while ( have_rows('slides') ) : the_row();
+
+
+							$slide_heading = get_sub_field('slide_heading');
+							$slide_heading_strong = get_sub_field('slide_heading_strong');
+							$slide_heading_small = get_sub_field('slide_heading_small');
+							$slide_image = get_sub_field('slide_image');
+				?>
 
 				<!-- BEGIN slide -->
 				<div class="item">
 
-					<div class="container" style="background-image: url('<?= THEME_URL; ?>/assets/img/slides/slide-1.png');">
+
+
+					<div class="container" style="background-image: url('<?php echo $slide_image['url']; ?>');">
 
 						<div class="row-tight">
 
@@ -16,9 +33,26 @@
 
 								<div class="slide-wrap">
 
-									<h1>Przychodnia <br /> <strong>Drozd</strong></h1>
+									<?php if( !empty($slide_heading) ): ?>
 
-									<small>Miła i profesjonalna obsługa</small>
+										<h1>
+											<?php the_sub_field('slide_heading'); ?> <br />
+
+											<?php if( !empty($slide_heading_strong) ): ?>
+
+												<strong><?php the_sub_field('slide_heading_strong'); ?></strong>
+
+											<?php endif; ?>
+
+										</h1>
+
+									<?php endif; ?>
+
+									<?php if( !empty($slide_heading_small) ): ?>
+
+										<small><?php the_sub_field('slide_heading_small'); ?></small>
+
+									<?php endif; ?>
 
 								</div>
 
@@ -30,6 +64,17 @@
 
 				</div>
 				<!-- END slide -->
+
+				<?php
+				   endwhile;
+
+				else :
+
+				    // no rows found
+
+				endif;
+
+				?>
 
 
 				<!-- BEGIN slide -->

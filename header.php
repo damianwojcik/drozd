@@ -116,7 +116,7 @@
 							<ul>
 
 								<li class="email"><a href="mailto:kontakt@przychodnia-drozd.pl">kontakt@przychodnia-drozd.pl</a></li>
-								<li class="phone"><span>Tel. 32 205 13 13</span></li>
+								<li class="phone"><a href="callto:0322051313">Tel. 32 205 13 13</a></li>
 
 							</ul>
 
@@ -139,7 +139,7 @@
 
 							<div class="logo-wrapper">
 								
-								<a href="#">
+								<a href="<?= SITE_URL; ?>">
 
 									<img class="logo" src="<?= THEME_URL; ?>/assets/img/logo.png" alt="Drozd Logo">
 

@@ -194,7 +194,7 @@
 
 					<div class="span6">
 
-						<p>2016 &copy; <a href="#">StudioNext.pl</a></p>
+						<p>2016 &copy; <a href="http://studionext.pl/">StudioNext.pl</a></p>
 
 					</div>
 

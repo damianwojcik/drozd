@@ -677,11 +677,6 @@
 
 @media screen and (max-width: 480px){
 
-	blockquote{
-		font-size: 24px;
-		padding: 30px 0 25px 0;
-		margin: 10px 0 40px 0;
-	}
 
 	/*modules*/
 	.featured-box{
@@ -706,9 +701,18 @@
 	}
 
 	article h3,
-	article p.featured{
+	article p.lead{
 		font-size: 16px;
 		line-height: 25px;
+	}
+
+	article blockquote{
+		padding: 30px 0 25px 0;
+		margin: 10px 0 40px 0;
+	}
+
+	article blockquote p{
+		font-size: 24px;
 	}
 
 	article p{
@@ -747,7 +751,7 @@
 		margin-left: 0;
 	}
 
-	.header-wrap .top-panel ul li.phone::before{
+	.header-wrap .top-panel ul li.phone a:before{
 		left: 25%;
 	}
 
