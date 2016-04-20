@@ -2,6 +2,11 @@
 
 
 	/*globals*/
+	body,
+	.page-wrapper{
+		background: #29385f;
+	}
+
 	.container,
 	header .header-wrap .container,
 	section.banners .container{

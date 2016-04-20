@@ -35,7 +35,7 @@ Author URI: www.studionext.pl
 }
 
 body{
-    background: #29385f;
+    background: #f9f9f9;
 	font-family: 'Lato', sans-serif;
 	font-weight: 400;
     font-size: 100%;
@@ -125,7 +125,7 @@ h6 { font-size: 14px; }
 }
 
 .page--wrapper{
-    background: #29385f;
+    background: #f9f9f9;
     position: relative;
     z-index: 9;
     right: 0;
@@ -240,6 +240,7 @@ article h3{
 }
 
 article h4{
+    min-height: 43px;
     margin-bottom: 35px;
 }
 
@@ -276,9 +277,19 @@ article p{
     margin-bottom: 35px;
 }
 
+article img{
+    float: left;
+    margin-right: 30px;
+}
+
 article .btn.btn-transparent,
 article .btn.btn-transparent:hover{
     margin-top: 10px;
+}
+
+article .article-heading{
+    display: table;
+    width: 100%;
 }
 
 article .article-heading h2{
@@ -362,6 +373,7 @@ article.featured h4{
     font-size: 24px;
     margin-top: -5px;
     margin-bottom: 20px;
+    min-height: 24px;
 }
 
 article.featured .article-content-wrap p{
@@ -369,6 +381,7 @@ article.featured .article-content-wrap p{
     line-height: 24px;
     min-height: 70px;
     margin-bottom: 15px;
+    color: #898989;
 }
 
 article.featured .article-content-wrap{
@@ -799,6 +812,11 @@ header{
     position: relative;
 }
 
+header .header-wrap{
+    position: relative;
+    z-index: 999;
+}
+
 header .header-wrap .container{
     width: 1240px;
     padding: 0 35px;
@@ -1013,7 +1031,7 @@ header .header-wrap .container{
 
 
 /*submenu*/
-.header-wrap  .header-navigation nav ul > li:hover .sub-menu {
+.header-wrap  .header-navigation nav ul li:hover .sub-menu{
     opacity: 1;
     visibility: visible;
 }
@@ -1058,7 +1076,7 @@ header .header-wrap .container{
     padding: 0 5px;
 }
 
-.header-wrap .container .sub-menu ul > li{
+.header-wrap .container .sub-menu ul li{
     float: left;
     width: 33%;
     display: list-item;
@@ -1267,6 +1285,10 @@ main{
     display: table;
     width: 100%;
     padding: 40px 45px;
+}
+
+main h1, main h2, main h3, main h4, main h5, main h6{
+    color: #000;
 }
 
 section.content{

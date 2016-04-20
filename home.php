@@ -266,38 +266,65 @@
 							</div>
 							<!-- END section-headline -->
 
+							<?php $featured_category = get_field('featured_articles_category', 'option'); ?>
+							<?php $args = array(
+								'posts_per_page'   => 3,
+								'category'         => $featured_category
+							);
+							$posts_array = get_posts( $args );
+
+							?>
+
+							<?php if( !empty($posts_array) ): ?>
+
+							<?php 
+
+							$trimmed = wp_trim_words( $posts_array[0]->post_content ); 
+							$post_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($posts_array[0]), 'large' );
+							?>
+
 							<article class="featured animation-element" data-anim="slide_top">
 								
-								<div class="article-img-wrap" style="background-image: url(<?= THEME_URL; ?>/assets/img/articles/article1.jpg);"></div>
+								<div class="article-img-wrap" style="background-image: url(<?php echo $post_thumbnail[0] ?>);"></div>
 
 								<div class="article-content-wrap">
 
-									<h4>Nulla imperdiet sit malesuada</h4>
-									<p>Turpis velit, rhoncus eu, luctus et interdum adipisci wisi mauris nec malesuada fames ac turpis velit, rhoncus eluctus  Ut molestie a, ultricies porta urna vestibulum commodo.</p>
+									<h4><?php echo $posts_array[0]->post_title; ?></h4>
+									<p><?php echo $trimmed; ?></p>
 
-									<a href="#" class="btn btn-green btn-medium">Więcej</a>
+									<a href="<?php the_permalink(); ?>" class="btn btn-green btn-medium">Więcej</a>
 
 								</div>
 
 							</article>
 
 							<div class="row row-articles animation-element" data-anim="slide_top">
-								
-								<div class="span6">
+
+
+							<?php
+
+								for ($i = 1; $i <= 2; $i++){
+
+									$trimmed = wp_trim_words( $posts_array[$i]->post_content );
+									$post_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($posts_array[$i]), 'large' );
+									?>
+
+
+									<div class="span6">
 
 									<article>
 									
-										<h4>Nolestie altricies porta urna tibulum commodo volutpat lorem ipsum</h4>
+										<h4><?php echo $posts_array[$i]->post_title; ?></h4>
 
 										<div class="wrap">
 
-											<div class="article-img-wrap" style="background-image: url(<?= THEME_URL; ?>/assets/img/articles/article2.jpg);"></div>
+											<div class="article-img-wrap" style="background-image: url(<?php echo $post_thumbnail[0] ?>);"></div>
 
 											<div class="article-content-wrap">
 
-												<p>Turpis velit, rhoncus eu, luctus et interdum adipiscing wisi mauris anec malesuada fames honcus eluctus.</p>
+												<p><?php echo $trimmed; ?></p>
 
-												<a href="#" class="btn btn-green btn-small">Więcej</a>
+												<a href="<?php the_permalink(); ?>" class="btn btn-green btn-small">Więcej</a>
 
 											</div>
 
@@ -307,29 +334,14 @@
 
 								</div>
 
-								<div class="span6">
+							<?php
 
-									<article>
-									
-										<h4>Nolestie altricies porta urna tibulum commodo volutpat lorem ipsum</h4>
+								}
+								?>
+							
+							<?php endif; ?>
+							<!-- ENDif !empty posts_array -->
 
-										<div class="wrap">
-
-											<div class="article-img-wrap" style="background-image: url(<?= THEME_URL; ?>/assets/img/articles/article3.jpg);"></div>
-
-											<div class="article-content-wrap">
-
-												<p>Turpis velit, rhoncus eu, luctus et interdum adipiscing wisi mauris anec malesuada fames honcus eluctus.</p>
-
-												<a href="#" class="btn btn-green btn-small">Więcej</a>
-
-											</div>
-
-										</div>
-
-									</article>
-
-								</div>
 
 							</div>
 

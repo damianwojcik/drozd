@@ -48,7 +48,7 @@
 
 	<nav id="mobile-menu">
 
-		<ul>
+		<!-- <ul>
 
 			<li><a href="#">Strona Główna</a></li>
 			<li><a href="#">O nas</a></li>
@@ -81,7 +81,9 @@
 			<li><a href="#">Galeria</a></li>
 			<li><a href="#">Kontakt</a></li>
 
-		</ul>
+		</ul> -->
+
+		<?php dynamic_sidebar('main_menu'); ?>
 
 	</nav>
 
@@ -201,7 +203,7 @@
 
 							<nav id="desktop-menu">
 
-								<ul>
+								<!-- <ul>
 
 									<li><a href="#">Strona Główna</a></li>
 									<li><a href="#">O nas</a></li>
@@ -236,7 +238,9 @@
 									<li><a href="#">Galeria</a></li>
 									<li><a href="#">Kontakt</a></li>
 
-								</ul>
+								</ul> -->
+
+								<?php dynamic_sidebar('main_menu'); ?>
 
 							</nav>
 

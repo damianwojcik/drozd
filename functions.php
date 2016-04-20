@@ -3,11 +3,22 @@
 	define("THEME_URL", get_stylesheet_directory_uri());
 	define("SITE_URL", site_url());
 
+	add_theme_support( 'post-thumbnails' );	
+
 	if (function_exists( 'register_sidebar' )) {
 
 		register_sidebar(array(
 			'name' => 'Menu główne',
 			'id'  => 'main_menu',
+			'before_title' => '', 
+			'after_title' => '',
+			'before_widget' => '',
+			'after_widget'  => '',
+		));
+
+		register_sidebar(array(
+			'name' => 'Menu Stopka',
+			'id'  => 'footer_menu',
 			'before_title' => '', 
 			'after_title' => '',
 			'before_widget' => '',

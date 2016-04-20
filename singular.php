@@ -9,7 +9,7 @@
 
 					<div class="span12">
 
-						<h1 class="title">Artykuły</h1>
+						<h1 class="title"><?php the_title(); ?></h1>
 
 					</div>
 
@@ -35,15 +35,31 @@
 
 					<main>
 
+					<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+						<?php if ( has_post_thumbnail() ) {
+
+							$post_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id(), 'large' );
+							$categories = get_the_category( $post->ID );
+							$category_id = $categories[0]->term_id;
+							$category_link = get_category_link( $category_id );
+
+						}?>
+
+						<?php 
+
+						$is_page = is_page();
+
+						// BEGIN post type template
+						if($is_page != 1): ?>
+
 						<article>
 
-							<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+							<div class="article-heading">
 
-								<?php $article_img = get_field('article-img');  ?>
+								<div class="article-heading-img-wrap" style="background-image: url(<?php echo $post_thumbnail['0']; ?>);"></div>
 
-								<div class="article-heading-img-wrap" style="background-image: url(<?php echo $article_img['url']; ?>);"></div>
-
-								<h2><?= the_title(); ?></h2>
+								<h2><?php the_title(); ?></h2>
 
 								<div class="article-heading-social">
 
@@ -54,19 +70,22 @@
 									
 								</div>
 
-								<p class="lead">
+							</div>
 
-									<?= the_field('lead'); ?>
-
-								</p>
-
-								<?php the_content(); ?>								
-
-							<?php endwhile; endif; ?>
-
-							<a href="#" class="btn btn-transparent">Wróć</a>
+						<a href="#" class="btn btn-transparent">Wróć</a>
 
 						</article>
+
+						<?php endif; ?>
+						<!-- END post type template -->
+
+						<!-- BEGIN page type template -->
+
+
+						<?php the_content(); ?>	
+
+
+					<?php endwhile; endif; ?>
 
 					</main>
 					
@@ -171,19 +190,37 @@
 							
 							<h3>Powiązane artykuły</h3>
 
+							<?php $args = array(
+								'posts_per_page'   => 3,
+								'category'         => $category_id,
+							);
+							$posts_array = get_posts( $args );
+
+							?>
+
+							<?php if (!empty($posts_array)){ ?>
+							
+							<?php foreach ($posts_array as $post) { ?>
+
+							<?php 
+
+							$trimmed = wp_trim_words( $post->post_content ); 
+							$post_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post), 'large' );
+
+							?>
 							<article>
 						
-								<h4>Nolestie altricies porta urna tibulum commodo volutpat lorem ipsum</h4>
+								<h4><?php echo $post->post_title; ?></h4>
 
 								<div class="wrap">
 
-									<div class="article-img-wrap" style="background-image: url(<?= THEME_URL; ?>/assets/img/articles/article3.jpg);"></div>
+									<div class="article-img-wrap" style="background-image: url(<?php echo $post_thumbnail[0] ?>);"></div>
 
 									<div class="article-content-wrap">
 
-										<p>Turpis velit, rhoncus eu, luctus et interdum adipiscing wisi mauris anec malesuada fames honcus eluctus.</p>
+										<p><?php echo $trimmed; ?></p>
 
-										<a href="#" class="btn btn-green btn-small">Więcej</a>
+										<a href="<?php the_permalink(); ?>" class="btn btn-green btn-small">Więcej</a>
 
 									</div>
 
@@ -191,47 +228,13 @@
 
 							</article>
 
-							<article>
+							<?php } ?>
+
 							
-								<h4>Nolestie altricies porta urna tibulum commodo volutpat lorem ipsum</h4>
 
-								<div class="wrap">
+							<a href="<?php echo esc_url( $category_link ); ?>" class="btn btn-transparent">Pokaż wszystkie</a>
 
-									<div class="article-img-wrap" style="background-image: url(<?= THEME_URL; ?>/assets/img/articles/article2.jpg);"></div>
-
-									<div class="article-content-wrap">
-
-										<p>Turpis velit, rhoncus eu, luctus et interdum adipiscing wisi mauris anec malesuada fames honcus eluctus.</p>
-
-										<a href="#" class="btn btn-green btn-small">Więcej</a>
-
-									</div>
-
-								</div>
-
-							</article>
-
-							<article>
-							
-								<h4>Nolestie altricies porta urna tibulum commodo volutpat lorem ipsum</h4>
-
-								<div class="wrap">
-
-									<div class="article-img-wrap" style="background-image: url(<?= THEME_URL; ?>/assets/img/articles/article2.jpg);"></div>
-
-									<div class="article-content-wrap">
-
-										<p>Turpis velit, rhoncus eu, luctus et interdum adipiscing wisi mauris anec malesuada fames honcus eluctus.</p>
-
-										<a href="#" class="btn btn-green btn-small">Więcej</a>
-
-									</div>
-
-								</div>
-
-							</article>
-
-							<a href="#" class="btn btn-transparent">Pokaż wszystkie</a>
+							<?php } ?>
 
 						</section>
 						<!-- END aside section -->
