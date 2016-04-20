@@ -363,7 +363,7 @@
 		width: 100%;
 		padding: 0;
 		margin-bottom: 35px;
-		height: 45px;
+		height: 54px;
 	}
 
 	section.info .wrap .icon-wrap picture{
@@ -536,6 +536,7 @@
 		width: 100%;
 		padding: 40px 0 275px;
 		text-align: center;
+		height: 524px;
 	}
 
 	section.slider .owl-carousel .owl-controls .owl-nav .owl-next,

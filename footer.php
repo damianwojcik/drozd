@@ -7,25 +7,48 @@
 
 			<div class="row-tight">
 
+			<?php
+
+			// check if the repeater field has rows of data
+			if( have_rows('info_boxes', 'option') ):
+
+			 	// loop through the rows of data
+			    while ( have_rows('info_boxes', 'option') ) : the_row(); 
+
+					$image = get_sub_field('image');
+					$title = get_sub_field('title');
+					$content = get_sub_field('content');
+
+					?>
+
 				<div class="span4">
 
 					<div class="wrap">
 
 						<div class="icon-wrap">
 
-							<picture>
-								<source srcset="<?= THEME_URL; ?>/assets/img/icons/icon-time-768w.png" media="(max-width: 1024px)">
-								<source srcset="<?= THEME_URL; ?>/assets/img/icons/icon-time.png">
-								<img src="<?= THEME_URL; ?>/assets/img/icons/icon-time.png" alt="Time">
-							</picture>
+							<?php if( !empty($image) ): ?>
+
+								<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+
+							<?php endif; ?>
 
 						</div>
 
 						<div class="info-content">
 
-							<h3>Godziny otwarcia</h3>
-							<p>PONIEDZIAŁEK - PIĄTEK:</p>
-							<p><strong>8.00 - 20.00</strong></p>
+							<?php if( !empty($title) ): ?>
+
+								<h3><?php echo $title; ?></h3>
+
+							<?php endif; ?>
+
+							<?php if( !empty($content) ): 
+
+								echo $content;
+
+								endif;
+							?>
 
 						</div>
 
@@ -34,59 +57,16 @@
 				</div>
 				<!-- END span4 -->
 
-				<div class="span4">
+				<?php
+					   endwhile;
 
-					<div class="wrap">
+					else :
 
-						<div class="icon-wrap">
+					    // no rows found
 
-							<picture>
-								<source srcset="<?= THEME_URL; ?>/assets/img/icons/icon-place-768w.png" media="(max-width: 1024px)">
-								<source srcset="<?= THEME_URL; ?>/assets/img/icons/icon-place.png">
-								<img src="<?= THEME_URL; ?>/assets/img/icons/icon-place.png" alt="Place">
-							</picture>
+					endif;
 
-						</div>
-
-						<div class="info-content">
-
-							<h3>Adres przychodni</h3>
-							<p>Ul. Drozdów 26</p>
-							<p>40-530 Katowice</p>
-
-						</div>
-
-					</div>
-
-				</div>
-				<!-- END span4 -->
-				
-				<div class="span4">
-
-					<div class="wrap">
-
-						<div class="icon-wrap">
-
-							 <picture>
-								<source srcset="<?= THEME_URL; ?>/assets/img/icons/icon-contact-768w.png" media="(max-width: 1024px)">
-								<source srcset="<?= THEME_URL; ?>/assets/img/icons/icon-contact.png">
-								<img src="<?= THEME_URL; ?>/assets/img/icons/icon-contact.png" alt="Contact">
-							</picture>
-
-						</div>
-
-						<div class="info-content">
-
-							<h3>Skontaktuj się</h3>
-							<p>Tel./fax 32 205 13 13</p>
-							<a href="mailto:kontakt@przychodnia-drozd.pl">kontakt@przychodnia-drozd.pl</a>
-
-						</div>
-
-					</div>
-
-				</div>
-				<!-- END span4 -->
+				?>
 
 			</div>
 
@@ -136,9 +116,15 @@
 							<h3>Newsletter</h3>
 
 							<p>
-								Chcesz dostawać powiadomienia o  zmianach
-								na stronie, aktualnościach i nowych artykułach?
-								<strong>Zapisz się do newlettera!</strong>
+								<?php $newsletter_content = get_field('newsletter_content', 'option');
+
+								if( !empty($newsletter_content) ):
+
+									echo $newsletter_content;
+
+								endif;
+								?>
+
 							</p>
 
 							<form action="">
@@ -213,39 +199,56 @@
 	================================================== -->
 	<section class="banners">
 
+		<?php
+
+		// check if the repeater field has rows of data
+		if( have_rows('section_banners', 'option') ):
+
+		 	// loop through the rows of data
+		    while ( have_rows('section_banners', 'option') ) : the_row(); 
+
+				$notification = get_sub_field('notification');
+
+		?>
+
 		<div class="container">
 
 			<div class="row">
 
-				<div class="span4">
+				<?php
 
-					<div class="wrap">
+				// check if the repeater field has rows of data
+				if( have_rows('single_banner', 'option') ):
 
-						<a href="#"><img src="<?= THEME_URL; ?>/assets/img/logos-pr.png" alt="Program Regionalny"></a>
+				 	// loop through the rows of data
+				    while ( have_rows('single_banner', 'option') ) : the_row(); 
 
-					</div>
+						$image = get_sub_field('image');
+						$link = get_sub_field('link');
 
-				</div>
-
-				<div class="span4">
-
-					<div class="wrap">
-
-						<a href="#"><img src="<?= THEME_URL; ?>/assets/img/logos-slaskie.png" alt="Slaskie"></a>
-
-					</div>
-
-				</div>
+				?>
 
 				<div class="span4">
 
 					<div class="wrap">
 
-						<a href="#"><img src="<?= THEME_URL; ?>/assets/img/logos-ue.png" alt="Unia Europejska"></a>
+						<a href="<?php echo $link; ?>"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"></a>
 
 					</div>
 
 				</div>
+
+				<?php
+					   endwhile;
+
+					else :
+
+					    // no rows found
+
+					endif;
+
+				?>
+				
 					
 			</div>
 			<!-- END row -->
@@ -255,7 +258,7 @@
 				<div class="span12">
 
 					<p>
-						Projekt współfinansowany przez Unię Europejską z Europejskiego Funduszu Rozwoju Regionalnego w ramach Regionalnego Programu Operacyjnego Województwa Śląskiego na lata 2007-2013.
+						<?php echo $notification; ?>
 					</p>
 
 				</div>
@@ -264,6 +267,17 @@
 			<!-- END row -->
 
 		</div>
+
+		<?php
+			   endwhile;
+
+			else :
+
+			    // no rows found
+
+			endif;
+
+		?>
 
 	</section>
 	<!-- END section banners -->

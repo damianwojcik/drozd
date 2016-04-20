@@ -8,15 +8,15 @@
 				<?php
 
 					// check if the repeater field has rows of data
-					if( have_rows('slides') ):
+					if( have_rows('slides', 'option') ):
 
 					 	// loop through the rows of data
-					    while ( have_rows('slides') ) : the_row();
+					    while ( have_rows('slides', 'option') ) : the_row();
 
 
 							$slide_heading = get_sub_field('slide_heading');
 							$slide_heading_strong = get_sub_field('slide_heading_strong');
-							$slide_heading_small = get_sub_field('slide_heading_small');
+							$slide_description = get_sub_field('slide_description');
 							$slide_image = get_sub_field('slide_image');
 				?>
 
@@ -33,14 +33,18 @@
 
 								<div class="slide-wrap">
 
-									<?php if( !empty($slide_heading) ): ?>
+									<?php if( !empty($slide_heading) or !empty($slide_heading_strong) ): ?>
 
 										<h1>
-											<?php the_sub_field('slide_heading'); ?> <br />
+											<?php if( !empty($slide_heading) ): ?>
+
+												<?php echo $slide_heading; ?> <br />
+
+											<?php endif; ?>
 
 											<?php if( !empty($slide_heading_strong) ): ?>
 
-												<strong><?php the_sub_field('slide_heading_strong'); ?></strong>
+												<strong><?php echo $slide_heading_strong; ?></strong>
 
 											<?php endif; ?>
 
@@ -48,9 +52,10 @@
 
 									<?php endif; ?>
 
-									<?php if( !empty($slide_heading_small) ): ?>
+									
+									<?php if( !empty($slide_description) ): ?>
 
-										<small><?php the_sub_field('slide_heading_small'); ?></small>
+										<small><?php echo $slide_description; ?></small>
 
 									<?php endif; ?>
 
@@ -76,60 +81,6 @@
 
 				?>
 
-
-				<!-- BEGIN slide -->
-				<div class="item">
-
-					<div class="container" style="background-image: url('<?= THEME_URL; ?>/assets/img/slides/slide-1.png');">
-
-						<div class="row-tight">
-
-							<div class="span7">
-
-								<div class="slide-wrap">
-
-									<h1>Drugi<br /> <strong>Slajd</strong></h1>
-
-									<small>Miła i profesjonalna obsługa</small>
-
-								</div>
-
-							</div>
-
-						</div>
-
-					</div>
-
-				</div>
-				<!-- END slide -->
-
-
-				<!-- BEGIN slide -->
-				<div class="item">
-
-					<div class="container" style="background-image: url('<?= THEME_URL; ?>/assets/img/slides/slide-1.png');">
-
-						<div class="row-tight">
-
-							<div class="span7">
-
-								<div class="slide-wrap">
-
-									<h1>Trzeci <br /> <strong>Slajd</strong></h1>
-
-									<small>Miła i profesjonalna obsługa</small>
-
-								</div>
-
-							</div>
-
-						</div>
-
-					</div>
-
-				</div>
-				<!-- END slide -->
-
 			</div>
 			<!-- END owl-carousel -->
 
@@ -147,82 +98,96 @@
 
 			<div class="row-tight">
 
-				<div class="span4">
+				<?php
 
-					<div class="featured-box">
+				// check if the repeater field has rows of data
+				if( have_rows('featured_boxes', 'option') ):
 
-						<div class="featured-box-heading">
+				 	// loop through the rows of data
+				    while ( have_rows('featured_boxes', 'option') ) : the_row(); 
 
-							<a href="#"><img src="<?= THEME_URL; ?>/assets/img/icons/icon-nfz.png" alt="NFZ"></a>
+						$image = get_sub_field('image');
+						$title = get_sub_field('title');
+						$description = get_sub_field('description');
+
+						?>
+
+					<div class="span4">
+
+						<div class="featured-box">
+
+							<div class="featured-box-heading">
+
+								<?php if( !empty($image) ): ?>
+
+									<a href="#"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"></a>
+
+								<?php endif; ?>
+
+							</div>
+
+							<?php if( !empty($title) ): ?>
+
+								<h2><?php echo $title; ?></h2>
+
+							<?php endif; ?>
+
+
+							<?php
+
+							// check if the repeater field has rows of data
+							if( have_rows('list', 'option') ):
+
+							 	?>
+
+									<ul>
+
+									<?php
+								    while ( have_rows('list', 'option') ) : the_row(); 
+
+										$list_element = get_sub_field('list_element');
+										
+										?>
+
+										<li><?php echo $list_element; ?></li>
+
+										<?php
+
+											endwhile; ?>
+
+									</ul>
+
+									<?php
+									else :
+
+								    // no rows found
+
+										endif;
+
+									?>
+
+							<?php if( !empty($description) ): ?>
+
+								<small><?php echo $description; ?></small>
+
+							<?php endif; ?>
 
 						</div>
 
-						<h2>Wsparcie z NFZ</h2>
-
-						<ul>
-
-							<li>Poradnia lekarza rodzinnego</li>
-							<li>Poradnia kardiologiczne</li>
-
-						</ul>
-
-						<small>Posiadamy kontrakt z Narodowym Funduszem Zdrowia w zakresie podstawowej opieki zdrowotnej oraz w zakresie porad kardiologicznych u dorosłych.</small>
-
 					</div>
+					<!-- END span4 -->
 
-				</div>
-				<!-- END span4 -->
 
-				<div class="span4">
+				<?php
+				   endwhile;
 
-					<div class="featured-box">
+				else :
 
-						<div class="featured-box-heading">
+				    // no rows found
 
-							<a href="#"><img src="<?= THEME_URL; ?>/assets/img/icons/icon-heart.png" alt="Cardio"></a>
+				endif;
 
-						</div>
-
-						<h2>
-							Poradnia kardiologiczna
-						</h2>
-
-						<ul>
-
-							<li>Ewa Szymkowiak-Rzechorzek</li>
-							<li>Barbara Michniak</li>
-							<li>Ewa Tymczyńska</li>
-
-						</ul>
-
-					</div>
-
-				</div>
-				<!-- END span4 -->
-
-				<div class="span4">
-
-					<div class="featured-box">
-
-						<div class="featured-box-heading">
-
-							<a href="#"><img src="<?= THEME_URL; ?>/assets/img/icons/icon-stethoscope.png" alt="Stethoscope"></a>
-
-						</div>
-
-						<h2>Gabinety specjalistyczne</h2>
-
-						<ul>
-
-							<li>Dermatologia</li>
-							<li>Neurologia</li>
-
-						</ul>
-
-					</div>
-
-				</div>
-				<!-- END span4 -->
+			?>
 
 			</div>
 
@@ -247,15 +212,40 @@
 
 						<div class="wrap">
 
-							<h3>Przychodnia Drozd</h3>
+						<?php
+
+						// check if the repeater field has rows of data
+						if( have_rows('section_intro', 'option') ):
+
+						 	// loop through the rows of data
+						    while ( have_rows('section_intro', 'option') ) : the_row(); 
+
+								$section_title = get_sub_field('section_title');
+								$section_content = get_sub_field('section_content');
+								$section_image = get_sub_field('section_image');
+
+								?>
+
+							<h3><?php echo $section_title; ?></h3>
 
 							<p>
-								Prywatna Przychodnia Specjalistyczna DROZD istnieje już <strong>20 lat</strong>. Od 1994 roku służy pomocą medyczną chorym z chorobami układu sercowo-naczyniowego, a od ponad 14 lat zabezpiecza podstawową opiekę medyczną dla mieszkańców Osiedla Brynów i okolicznych Osiedli. Zabezpieczamy także opiekę medyczną dla uczniów pobliskiej Szkoły Podstawowej nr 65.
+								<?php echo $section_content; ?>
 							</p>
 
-							<img class="img-intro animation-element" data-anim="scale_up" src="<?= THEME_URL; ?>/assets/img/certyfikat.png" alt="Certyfikat">
+							<img class="img-intro animation-element" data-anim="scale_up" src="<?php echo $section_image['url']; ?>" alt="<?php echo $section_image['alt']; ?>">
 
 							<a href="#" class="btn btn-green btn-large">Czytaj więcej</a>
+
+							<?php
+								   endwhile;
+
+								else :
+
+								    // no rows found
+
+								endif;
+
+							?>
 
 						</div>
 

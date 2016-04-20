@@ -1135,6 +1135,7 @@ section.slider .owl-carousel .item .slide-wrap{
     display: table-cell;
     vertical-align: middle;
     padding: 95px 0;
+    height: 474px;
 }
 
 section.slider .owl-carousel .item .container{
@@ -1298,6 +1299,7 @@ section.intro p{
 
 section.intro .wrap{
     width: 59%;
+    min-height: 300px;
 }
 
 section.intro .img-intro{

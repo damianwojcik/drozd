@@ -113,12 +113,30 @@
 
 						<div class="span6">
 
+							<?php $header_email = get_field('header_email', 'option');
+								  $header_phone = get_field('header_phone', 'option');
+
+								if( !empty($header_email) or !empty($header_phone)): ?>
+
+
 							<ul>
 
-								<li class="email"><a href="mailto:kontakt@przychodnia-drozd.pl">kontakt@przychodnia-drozd.pl</a></li>
-								<li class="phone"><a href="callto:0322051313">Tel. 32 205 13 13</a></li>
+
+								<?php if( !empty($header_email) ): ?>
+
+									<li class="email"><a href="mailto:kontakt@przychodnia-drozd.pl">kontakt@przychodnia-drozd.pl</a></li>
+
+								<?php endif; ?>
+
+								<?php if( !empty($header_phone) ): ?>
+
+									<li class="phone"><a href="callto:0322051313">Tel. 32 205 13 13</a></li>
+
+								<?php endif; ?>
 
 							</ul>
+
+							<?php endif; ?>
 
 						</div>
 
@@ -141,9 +159,21 @@
 								
 								<a href="<?= SITE_URL; ?>">
 
-									<img class="logo" src="<?= THEME_URL; ?>/assets/img/logo.png" alt="Drozd Logo">
+									<?php $logo = get_field('logo', 'option');
 
-									<span>Prywatna Przychodnia Specjalistyczna</span>
+									$logo_title = get_field('logo_title', 'option');
+
+									if( !empty($logo) ): ?>
+
+										<img class="logo" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
+
+									<?php endif; ?>
+
+									<?php if( !empty($logo_title) ): ?>
+
+										<span>Prywatna Przychodnia Specjalistyczna</span>
+
+									<?php endif; ?>
 
 								</a>
 
