@@ -1,6 +1,6 @@
 <?php
 
-	function custom_post_type() {
+	function custom_post_type(){
 
 		$labels = array(
 			'name'                  => _x( 'Lekarze', 'Post Type General Name', 'text_domain' ),
@@ -27,20 +27,21 @@
 			'uploaded_to_this_item' => __( 'Uploaded to this item', 'text_domain' ),
 			'items_list'            => __( 'Items list', 'text_domain' ),
 			'items_list_navigation' => __( 'Items list navigation', 'text_domain' ),
-			'filter_items_list'     => __( 'Filter items list', 'text_domain' ),
+			'filter_items_list'     => __( 'Filter items list', 'text_domain' )
 		);
+
 		$rewrite = array(
 			'slug'                  => 'lekarze',
 			'with_front'            => true,
 			'pages'                 => true,
-			'feeds'                 => true,
+			'feeds'                 => true
 		);
+
 		$args = array(
 			'label'                 => __( 'Lekarz', 'text_domain' ),
 			'description'           => __( 'Opis lekarza', 'text_domain' ),
 			'labels'                => $labels,
 			'supports'              => array( 'title', 'thumbnail' ),
-			'taxonomies'            => false,
 			'hierarchical'          => false,
 			'public'                => true,
 			'show_ui'               => true,
@@ -54,10 +55,13 @@
 			'exclude_from_search'   => false,
 			'publicly_queryable'    => true,
 			'rewrite'               => $rewrite,
-			'capability_type'       => 'page',
+			'capability_type'       => 'page'
 		);
+
 		register_post_type( 'doctor', $args );
 
 	}
+
+	add_action( 'init', 'custom_post_type', 0 );
 
 ?>
