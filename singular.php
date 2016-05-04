@@ -1,27 +1,6 @@
 <?php get_header(); ?>
 
 
-		<section class="slider animation-element" data-anim="slide_top">
-
-			<div class="container">
-
-				<div class="row">
-
-					<div class="span12">
-
-						<h1 class="title"><?php the_title(); ?></h1>
-
-					</div>
-
-				</div>
-
-			</div>
-
-		</section>
-		<!-- END section slider -->
-
-	</header>
-
 	<!-- =================================================
 			section content
 	================================================== -->
@@ -85,7 +64,9 @@
 						<?php the_content(); ?>	
 
 
-					<?php endwhile; endif; ?>
+						<?php endwhile; ?>
+
+					<?php endif; ?>
 
 					</main>
 					
@@ -95,150 +76,25 @@
 				<div class="span4 aside">
 					
 					<aside class="animation-element" data-anim="slide_top">
+						<!-- =================================================
+							section thumb-listing
+						================================================== -->
+						<?php get_template_part("partials/aside", "thumb_listing"); ?>
 
-						<section class="thumb-listing animation-element" data-anim="slide_top">
 
-							<h3>Dzisiaj Przyjmują</h3>
+						<!-- =================================================
+							section form-wrap
+						================================================== -->
+						<?php get_template_part("partials/aside", "form_wrap"); ?>
 
-							<p>Rus et interdum adipisci wisi mauris lorem nec malesuada fame:</p>
 
-							<ul>
+						<!-- =================================================
+							section related-articles
+						================================================== -->
+						<?php get_template_part("partials/aside", "related_articles"); ?>
 
-								<li>
 
-									<a href="#">
-
-										<div class="thumb-photo-wrap" style="background-image: url(<?= THEME_URL; ?>/assets/img/people/wojciechceglarski.jpg);"></div>
-
-										<div class="thumb-item-details">
-											<span>dr Wojciech Ceglarski</span>
-											<h5>Kardiochirurg</h5>
-											<span class="text-blue">10.00 - 14.00</span>
-										</div>
-
-									</a>
-
-								</li>
-
-								<li>
-
-									<a href="#">
-
-										<div class="thumb-photo-wrap" style="background-image: url(<?= THEME_URL; ?>/assets/img/people/malgorzatapuzio.jpg);"></div>
-
-										<div class="thumb-item-details">
-											<span>Małgorzata Puzio</span>
-											<h5>Medycyna rodzinna</h5>
-											<span class="text-blue">12.00 - 20.00</span>
-										</div>
-
-									</a>
-
-								</li>
-
-								<li>
-
-									<a href="#">
-
-										<div class="thumb-photo-wrap" style="background-image: url(<?= THEME_URL; ?>/assets/img/people/ligiabrzezinska.jpg);"></div>
-
-										<div class="thumb-item-details">
-											<span>prof. Ligia Brzezińska-Wcisło</span>
-											<h5>Dermatolog, Wenerolog</h5>
-											<span class="text-blue">14.00 - 18.00</span>
-										</div>
-
-									</a>
-
-								</li>
-
-							</ul>
-
-							<a href="#" class="btn btn-transparent">Pokaż wszystkich</a>
-
-						</section>
-						<!-- END aside section -->
-
-						<section class="form-wrap animation-element" data-anim="slide_top">
-							
-							<h3>Umów się na wizytę</h3>
-
-							<p>Hasellus fermentum in, dolor pellentesque facilisi nulla malesuada fames  luctus et</p>
-
-							<form action="">
-
-								<input type="text" name="name" id="name" placeholder="Imię i nazwisko">
-
-								<input type="text" name="contact" id="contact" placeholder="Email lub telefon">
-
-								<textarea cols="1" rows="1" name="msg" id="msg" placeholder="Treść wiadomości">
-									
-								</textarea>
-
-								<div class="submit-wrap">
-
-									<input type="submit" value="Wyślij zapytanie">
-
-								</div>
-
-							</form>
-
-						</section>
-						<!-- END aside section -->
-
-						<section class="related-articles animation-element" data-anim="slide_top">
-							
-							<h3>Powiązane artykuły</h3>
-
-							<?php $args = array(
-								'posts_per_page'   => 3,
-								'category'         => $category_id,
-							);
-							$posts_array = get_posts( $args );
-
-							?>
-
-							<?php if (!empty($posts_array)){ ?>
-							
-							<?php foreach ($posts_array as $post) { ?>
-
-							<?php 
-
-							$trimmed = wp_trim_words( $post->post_content ); 
-							$post_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post), 'large' );
-
-							?>
-							<article>
 						
-								<h4><?php echo $post->post_title; ?></h4>
-
-								<div class="wrap">
-
-									<div class="article-img-wrap" style="background-image: url(<?php echo $post_thumbnail[0] ?>);"></div>
-
-									<div class="article-content-wrap">
-
-										<p><?php echo $trimmed; ?></p>
-
-										<a href="<?php the_permalink(); ?>" class="btn btn-green btn-small">Więcej</a>
-
-									</div>
-
-								</div>
-
-							</article>
-
-							<?php } ?>
-
-							
-
-							<a href="<?php echo esc_url( $category_link ); ?>" class="btn btn-transparent">Pokaż wszystkie</a>
-
-							<?php } ?>
-
-						</section>
-						<!-- END aside section -->
-
 					</aside>
 
 				</div>

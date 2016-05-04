@@ -9,88 +9,30 @@
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="icon" href="<?= THEME_URL; ?>/favicon.ico" type="image/png">
 
-
-	<!-- CSS
-	================================================== -->
-	<link rel="stylesheet" href="<?= THEME_URL; ?>/assets/css/base.css">
-	<link rel="stylesheet" href="<?= THEME_URL; ?>/assets/css/gridset.css">
-	<link rel="stylesheet" href="<?= THEME_URL; ?>/assets/css/animations.css">
-	<link rel="stylesheet" href="<?= THEME_URL; ?>/assets/css/owl.carousel.css">
-	<link rel="stylesheet" href="<?= THEME_URL; ?>/style.css">
-	<link rel="stylesheet" href="<?= THEME_URL; ?>/assets/css/responsive.css">
-
-
-	<!-- JS
-	================================================== -->
-	<?php wp_enqueue_script("jquery"); ?>
-	<?php wp_head(); ?>
-	<script src="<?= THEME_URL; ?>/assets/js/owl.carousel.min.js"></script>
-	<script src="<?= THEME_URL; ?>/assets/js/scripts.js"></script>
-
-
+	
 	<!-- HTML 5 SUPPORT
 	================================================== -->
-	<!--[if lt IE 9]>
-		<script src="http://html5shiv.googlecode.com/svn/trunk/html5.js"></script>
-	<![endif]-->
+    <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+      <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
+    <![endif]-->
+    
 
+	<?php wp_head(); ?>
 
 </head>
 <body <?php body_class(); ?>>
 
 
 <!-- =================================================
-		sidebar-menu
+		sidebar-menu MOBILE NAV
 ================================================== -->
-<aside class="sidebar-menu">
-
-	<a href="#" class="btn sidebar-btn">WRÓĆ</a>
-
-	<nav id="mobile-menu">
-
-		<!-- <ul>
-
-			<li><a href="#">Strona Główna</a></li>
-			<li><a href="#">O nas</a></li>
-			<li>
-
-				<span class="nav-more">+</span>
-
-				<a href="#">Poradnie</a>
+<?php get_template_part("partials/section", "mobile_nav"); ?>
 
 
-				<ul class="sub-menu">
-					
-					<li><a href="#">Poradnia Kardiologiczna</a></li>
-					<li><a href="#">Poradnia Kardiochirurgiczna</a></li>
-					<li><a href="#">Poradnia Chirurgii Naczyń i Angiologii</a></li>
-					<li><a href="#">Poradnia Dermatologiczna</a></li>
-					<li><a href="#">Poradnia Neurologiczna</a></li>
-					<li><a href="#">Poradnia Nefrologiczna</a></li>
-					<li><a href="#">Poradnia Pediatryczna</a></li>
-					<li><a href="#">Pracownia USG</a></li>
-					<li><a href="#">Pracownia Prób Wysiłkowych</a></li>
-					<li><a href="#">Pracownia Holterowska</a></li>
-					<li><a href="#">Pracownia Echokardiografii</a></li>
-					<li><a href="#">Badania kierowców</a></li>
-
-				</ul>
-
-
-			</li>
-			<li><a href="#">Galeria</a></li>
-			<li><a href="#">Kontakt</a></li>
-
-		</ul> -->
-
-		<?php dynamic_sidebar('main_menu'); ?>
-
-	</nav>
-
-</aside>
-<!-- END mobile nav -->
-
-
+<!-- =================================================
+		page-wrapper
+================================================== -->
 <div class="page--wrapper">
 
 
@@ -99,162 +41,29 @@
 	================================================== -->
 	<header>
 
-		<section class="header-wrap animation-element" data-anim="slide_top">
+		<?php get_template_part("partials/section", "header"); ?>
 
-			<section class="top-panel">
 
-				<div class="container">
+		<?php if( is_home() ){ ?>
 
-					<div class="row-tight">
+			<!-- =================================================
+				section slider
+			================================================== -->
+			<?php get_template_part("partials/section", "slider"); ?>	
+			
 
-						<div class="span6">
+		<?php }else{ ?>
 
-							<a href="#">www.przychodnia-drozd.pl</a>
+			<!-- =================================================
+				section title
+			================================================== -->
+			<?php get_template_part("partials/section", "title"); ?>
+			
 
-						</div>
+		<?php } ?>
 
-						<div class="span6">
+	</header>
 
-							<?php $header_email = get_field('header_email', 'option');
-								  $header_phone = get_field('header_phone', 'option');
-
-								if( !empty($header_email) or !empty($header_phone)): ?>
-
-
-							<ul>
-
-
-								<?php if( !empty($header_email) ): ?>
-
-									<li class="email"><a href="mailto:kontakt@przychodnia-drozd.pl">kontakt@przychodnia-drozd.pl</a></li>
-
-								<?php endif; ?>
-
-								<?php if( !empty($header_phone) ): ?>
-
-									<li class="phone"><a href="callto:0322051313">Tel. 32 205 13 13</a></li>
-
-								<?php endif; ?>
-
-							</ul>
-
-							<?php endif; ?>
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</section>
-			<!-- END section top-panel -->
-
-			<section class="header-navigation">
-
-				<div class="container">
-
-					<div class="row-tight">
-
-						<div class="span4">
-
-							<div class="logo-wrapper">
-								
-								<a href="<?= SITE_URL; ?>">
-
-									<?php $logo = get_field('logo', 'option');
-
-									$logo_title = get_field('logo_title', 'option');
-
-									if( !empty($logo) ): ?>
-
-										<img class="logo" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
-
-									<?php endif; ?>
-
-									<?php if( !empty($logo_title) ): ?>
-
-										<span>Prywatna Przychodnia Specjalistyczna</span>
-
-									<?php endif; ?>
-
-								</a>
-
-							</div>
-							<!-- END logo-wrapper -->
-
-							<!-- mobile nav -->
-							<div id="menu-toggle">
-
-								<span id="menu-toggle-text">MENU</span>
-
-								<div class="menu-bars">
-
-									<span class="menu-bar"></span>
-									<span class="menu-bar"></span>
-									<span class="menu-bar"></span>
-
-								</div>
-
-							</div>
-
-						</div>
-
-						<div class="span8">
-
-							<nav id="desktop-menu">
-
-								<!-- <ul>
-
-									<li><a href="#">Strona Główna</a></li>
-									<li><a href="#">O nas</a></li>
-									<li>
-
-										<a href="#">Poradnie</a>
-
-										<div class="sub-menu">
-
-											<h3>Poradnie</h3>
-
-											<ul>
-												
-												<li><a href="#">Poradnia Kardiologiczna</a></li>
-												<li><a href="#">Poradnia Kardiochirurgiczna</a></li>
-												<li><a href="#">Poradnia Chirurgii Naczyń i Angiologii</a></li>
-												<li><a href="#">Poradnia Dermatologiczna</a></li>
-												<li><a href="#">Poradnia Neurologiczna</a></li>
-												<li><a href="#">Poradnia Nefrologiczna</a></li>
-												<li><a href="#">Poradnia Pediatryczna</a></li>
-												<li><a href="#">Pracownia USG</a></li>
-												<li><a href="#">Pracownia Prób Wysiłkowych</a></li>
-												<li><a href="#">Pracownia Holterowska</a></li>
-												<li><a href="#">Pracownia Echokardiografii</a></li>
-												<li><a href="#">Badania kierowców</a></li>
-
-											</ul>
-
-										</div>
-
-									</li>
-									<li><a href="#">Galeria</a></li>
-									<li><a href="#">Kontakt</a></li>
-
-								</ul> -->
-
-								<?php dynamic_sidebar('main_menu'); ?>
-
-							</nav>
-
-						</div>
-
-					</div>
-
-				</div>
-
-			</section>
-			<!-- END section navigation -->
-
-		</section>
-		<!-- END section header-wrap -->
 
 
 		

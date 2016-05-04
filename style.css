@@ -49,11 +49,11 @@ body.menu-open{
 a{	
 	font-family: 'Lato', sans-serif;
 	text-decoration: none;
-    -webkit-transition: color 0.4s ease, background-color 0.4s ease, border 0.4s ease;
-    -moz-transition: color 0.4s ease, background-color 0.4s ease, border 0.4s ease;
-    -ms-transition: color 0.4s ease, background-color 0.4s ease, border 0.4s ease;
-    -o-transition: color 0.4s ease, background-color 0.4s ease, border 0.4s ease;
-    transition: color 0.4s ease, background-color 0.4s ease, border 0.4s ease;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
 }
 
 ul, ol, li{
@@ -579,12 +579,8 @@ section.related-articles .btn.btn-transparent{
     display: block;
 }
 
-.sidebar-menu #mobile-menu li.current-menu-item {
-    border-bottom: 0;
-}
-
 .sidebar-menu #mobile-menu li a:hover,
-.sidebar-menu #mobile-menu li.current-menu-item a {
+.sidebar-menu #mobile-menu li.current-menu-item a{
     color: #36baac;
 }
 
@@ -1029,6 +1025,10 @@ header .header-wrap .container{
     background: #29385f;
 }
 
+.header-wrap  .header-navigation nav .current-menu-item a{
+    color: #36baac;
+}
+
 
 /*submenu*/
 .header-wrap  .header-navigation nav ul li:hover .sub-menu{
@@ -1404,7 +1404,7 @@ aside section.form-wrap textarea{
     background: #FFF;
     width: 100%;
     border: 0;
-    margin-bottom: 12px;
+    margin-bottom: 10px;
     padding: 14px 12px;
     color: #575757;
     font-size: 14px;
@@ -1421,6 +1421,15 @@ aside section.form-wrap textarea{
 aside section.form-wrap input:focus{
     border: 0;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+}
+
+/*ninja form*/
+.text-wrap.label-above label, .textarea-wrap.label-above label{
+    display: none !important;
+}
+
+.field-wrap, #ninja_forms_required_items{
+    margin-bottom: 0px !important;
 }
 
 
@@ -1551,14 +1560,16 @@ footer section.footer-navigation ul li{
 footer section.footer-navigation ul li a{
     padding: 30px;
     display: block;
-    color: #b6c0d8;
+    color: #FFF;
+    opacity: .7;
     font-size: 14px;
     text-transform: uppercase;
     font-weight: 600;
 }
 
-footer section.footer-navigation ul li a:hover{
-    color: #FFF;
+footer section.footer-navigation ul li a:hover,
+footer section.footer-navigation ul li.current-menu-item a{
+    opacity: 1;
 }
 
 footer section.footer-navigation ul li:first-child a{

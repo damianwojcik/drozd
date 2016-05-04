@@ -33,7 +33,7 @@ jQuery(document).ready(function($){
 
 			var window_height = $window.height(),
 			window_top_pos = $window.scrollTop(),
-			window_bottom_pos = (window_top_pos + window_height - 200);
+			window_bottom_pos = (window_top_pos + window_height);
 
 			$.each($elements, function(){
 
