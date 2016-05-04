@@ -43,7 +43,7 @@
 
 						<div class="span12">
 
-							<?php if( !empty($newsletter_content) ): ?>
+							<?php if( !empty($notification) ): ?>
 
 								<p>
 									<?php echo $notification; ?>

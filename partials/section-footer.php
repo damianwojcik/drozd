@@ -11,18 +11,7 @@
 
 						<ul>
 
-							<li><a href="#">Poradnia Kardiologiczna</a></li>
-							<li><a href="#">Poradnia Kardiochirurgiczna</a></li>
-							<li><a href="#">Poradnia Chirurgii Naczyń i Angiologii</a></li>
-							<li><a href="#">Poradnia Dermatologiczna</a></li>
-							<li><a href="#">Poradnia Neurologiczna</a></li>
-							<li><a href="#">Poradnia Nefrologiczna</a></li>
-							<li><a href="#">Poradnia Pediatryczna</a></li>
-							<li><a href="#">Pracownia USG</a></li>
-							<li><a href="#">Pracownia Prób Wysiłkowych</a></li>
-							<li><a href="#">Pracownia Holterowska</a></li>
-							<li><a href="#">Pracownia Echokardiografii</a></li>
-							<li><a href="#">Badania kierowców</a></li>
+							<?php wp_list_pages( array( 'title_li' => '', 'child_of' => 20, 'date_format' => $date_format ) ); ?>
 
 						</ul>
 

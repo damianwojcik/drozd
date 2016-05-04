@@ -10,6 +10,10 @@ jQuery(document).ready(function($){
 	mobile_menu();
 
 
+	//adds heading to header sub-menu
+	$( ".header-wrap .sub-menu" ).prepend( "<h3>Poradnie</h3>" );
+
+
 	function owl_init(){
 		$('.owl-carousel').owlCarousel({
 

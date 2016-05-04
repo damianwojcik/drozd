@@ -111,44 +111,7 @@
 						<div class="span8">
 
 							<nav id="desktop-menu">
-
-								<!-- <ul>
-
-									<li><a href="#">Strona Główna</a></li>
-									<li><a href="#">O nas</a></li>
-									<li>
-
-										<a href="#">Poradnie</a>
-
-										<div class="sub-menu">
-
-											<h3>Poradnie</h3>
-
-											<ul>
-												
-												<li><a href="#">Poradnia Kardiologiczna</a></li>
-												<li><a href="#">Poradnia Kardiochirurgiczna</a></li>
-												<li><a href="#">Poradnia Chirurgii Naczyń i Angiologii</a></li>
-												<li><a href="#">Poradnia Dermatologiczna</a></li>
-												<li><a href="#">Poradnia Neurologiczna</a></li>
-												<li><a href="#">Poradnia Nefrologiczna</a></li>
-												<li><a href="#">Poradnia Pediatryczna</a></li>
-												<li><a href="#">Pracownia USG</a></li>
-												<li><a href="#">Pracownia Prób Wysiłkowych</a></li>
-												<li><a href="#">Pracownia Holterowska</a></li>
-												<li><a href="#">Pracownia Echokardiografii</a></li>
-												<li><a href="#">Badania kierowców</a></li>
-
-											</ul>
-
-										</div>
-
-									</li>
-									<li><a href="#">Galeria</a></li>
-									<li><a href="#">Kontakt</a></li>
-
-								</ul> -->
-
+								
 								<?php dynamic_sidebar('main_menu'); ?>
 
 							</nav>
@@ -164,3 +127,4 @@
 
 		</section>
 		<!-- END section header-wrap -->
+
