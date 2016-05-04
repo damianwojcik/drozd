@@ -39,7 +39,7 @@
 			'label'                 => __( 'Lekarz', 'text_domain' ),
 			'description'           => __( 'Opis lekarza', 'text_domain' ),
 			'labels'                => $labels,
-			'supports'              => array( 'title' ),
+			'supports'              => array( 'title', 'thumbnail' ),
 			'taxonomies'            => false,
 			'hierarchical'          => false,
 			'public'                => true,

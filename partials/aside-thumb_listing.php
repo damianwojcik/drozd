@@ -1,63 +1,88 @@
-					
+						<?php $args = array(
+							'posts_per_page'   => 3,
+							'post_type'        => 'doctor',
+							);
+
+						$posts_array = get_posts( $args );
+
+						$today = date("l");
+
+						?>
+
+
 						<section class="thumb-listing animation-element" data-anim="slide_top">
 
 							<h3>Dzisiaj Przyjmują</h3>
 
 							<p>Rus et interdum adipisci wisi mauris lorem nec malesuada fame:</p>
 
-							<ul>
+							<?php if (!empty($posts_array)){ ?>
 
-								<li>
+								<ul>
 
-									<a href="#">
+								<?php foreach ($posts_array as $post) { ?>
 
-										<div class="thumb-photo-wrap" style="background-image: url(<?= THEME_URL; ?>/assets/img/people/wojciechceglarski.jpg);"></div>
+									<?php
 
-										<div class="thumb-item-details">
-											<span>dr Wojciech Ceglarski</span>
-											<h5>Kardiochirurg</h5>
-											<span class="text-blue">10.00 - 14.00</span>
-										</div>
+										$name = get_the_title();
+										$photo = wp_get_attachment_url( get_post_thumbnail_id( $post->ID ) );
+										$title = get_field('title');
+										$workdays = get_field('workdays');
 
-									</a>
 
-								</li>
+										//displays doctors working on current day
+										foreach ($workdays as $days) {
 
-								<li>
+											
+											$dayAndHour = ' ' . $days['days'] . $days['hours'];
 
-									<a href="#">
+											$translate = array(
+											"Poniedziałek" => "Monday",
+											"Wtorek" => "Tuesday",
+											"Środa" => "Wednesday",
+											"Czwartek" => "Thursday",
+											"Piątek" => "Friday",
+											"Sobota" => "Saturday",
+											"Niedziela" => "Sunday" );
 
-										<div class="thumb-photo-wrap" style="background-image: url(<?= THEME_URL; ?>/assets/img/people/malgorzatapuzio.jpg);"></div>
+											$daysOfDoctor = strtr($dayAndHour, $translate);
 
-										<div class="thumb-item-details">
-											<span>Małgorzata Puzio</span>
-											<h5>Medycyna rodzinna</h5>
-											<span class="text-blue">12.00 - 20.00</span>
-										</div>
+											$pos = strpos($daysOfDoctor, $today);
 
-									</a>
+											if( $pos == 1){ ?>
 
-								</li>
+												<li>
 
-								<li>
+													<a href="<?php the_permalink(); ?>">
 
-									<a href="#">
+														<div class="thumb-photo-wrap" style="background-image: url(<?php echo $photo; ?>);"></div>
 
-										<div class="thumb-photo-wrap" style="background-image: url(<?= THEME_URL; ?>/assets/img/people/ligiabrzezinska.jpg);"></div>
+														<div class="thumb-item-details">
 
-										<div class="thumb-item-details">
-											<span>prof. Ligia Brzezińska-Wcisło</span>
-											<h5>Dermatolog, Wenerolog</h5>
-											<span class="text-blue">14.00 - 18.00</span>
-										</div>
+															<span><?php echo $name; ?></span>
 
-									</a>
+															<h5><?php echo $title; ?></h5>
 
-								</li>
+															<span class="text-blue"><?php echo str_replace($today, "", $daysOfDoctor); ?></span>
 
-							</ul>
+														</div>
 
-							<a href="#" class="btn btn-transparent">Pokaż wszystkich</a>
+													</a>
 
-						</section>
-						<!-- END section thumb-listing -->
+												</li>
+
+											<?php }//end if ?>
+
+										<?php }//end foreach workdays?>
+
+									<?php } // END foreach post?>
+
+								</ul>
+
+							<?php } // END if !empty($posts_array) ?>
+
+							<a href="<?php echo get_post_type_archive_link( 'doctor' ); ?>" class="btn btn-transparent">Pokaż wszystkich</a>
+
+							</section>
+							<!-- END section thumb-listing -->
+
