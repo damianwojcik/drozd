@@ -1449,9 +1449,9 @@ aside section.form-wrap h3{
     border-bottom: 1px solid #d7d7d7;
 }
 
-aside section.form-wrap input[type="text"],
-aside section.form-wrap input[type="email"],
-aside section.form-wrap textarea{
+input[type="text"],
+input[type="email"],
+textarea{
     font-family: 'Lato', serif;
     background: #FFF;
     width: 100%;
@@ -1462,17 +1462,23 @@ aside section.form-wrap textarea{
     font-size: 14px;
     line-height: 1.2;
     border-radius: 2px;
+    outline: 0;
 }
 
-aside section.form-wrap textarea{
+textarea{
     height: 110px;
     margin-bottom: 20px;
     resize: none;
 }
 
-aside section.form-wrap input:focus{
+input:focus{
     border: 0;
     box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    outline: 0;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, textarea:focus{
+  border: 0;
 }
 
 /*ninja form*/
@@ -1482,6 +1488,14 @@ aside section.form-wrap input:focus{
 
 .field-wrap, #ninja_forms_required_items{
     margin-bottom: 0px !important;
+}
+
+section.aside-contact a{
+  color: #36baac;
+}
+
+section.aside-contact a:hover{
+  color: #000;
 }
 
 
@@ -1692,4 +1706,12 @@ section.banners .span4:first-child a{
 
 section.banners .span4:last-child a{
     text-align: right;
+}
+
+
+/*template: page-contact*/
+.page-template-page-contact input[type="text"],
+.page-template-page-contact input[type="email"],
+.page-template-page-contact textarea{
+  border: 1px solid rgba(0, 0, 0, 0.1);
 }

@@ -10,6 +10,10 @@ jQuery(document).ready(function($){
 	mobile_menu();
 
 
+	//add placeholder to ninja form textarea
+	$(document).find('#ninja_forms_field_7').attr('placeholder', 'Treść wiadomości');
+
+
 	//adds heading to header sub-menu
 	$( ".header-wrap .sub-menu" ).prepend( "<h3>Poradnie</h3>" );
 
@@ -32,7 +36,7 @@ jQuery(document).ready(function($){
 
 		var $elements = $('.animation-element'),
 		$window = $(window);
-			
+
 		function check_if_in_view(){
 
 			var window_height = $window.height(),
@@ -70,7 +74,7 @@ jQuery(document).ready(function($){
 			mobile_menu = $('.sidebar-menu #mobile-menu');
 			sidebar_menu = $('.sidebar-menu');
 
-		btn.on('click', function(){ 
+		btn.on('click', function(){
 			$body.toggleClass('menu-open');
 			sidebar_menu.toggleClass('visible');
 		});
@@ -88,4 +92,3 @@ jQuery(document).ready(function($){
 
 
 });
-
