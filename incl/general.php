@@ -14,6 +14,7 @@
 		wp_enqueue_style( 'animations', THEME_URL .'/assets/css/animations.css' );
 		wp_enqueue_style( 'owl_styles', THEME_URL .'/assets/css/owl.carousel.css' );
 		wp_enqueue_style( 'site_styles', THEME_URL .'/style.css' );
+		wp_enqueue_style( 'wpcore', THEME_URL .'/assets/css/wpcore.css' );
 		wp_enqueue_style( 'responsive', THEME_URL .'/assets/css/responsive.css' );
 
 	}

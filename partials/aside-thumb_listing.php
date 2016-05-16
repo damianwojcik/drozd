@@ -50,7 +50,7 @@
 
 											$pos = strpos($daysOfDoctor, $today);
 
-											if( $pos == 1){ ?>
+											if( $pos == 1 ){ ?>
 
 												<li>
 
@@ -74,9 +74,9 @@
 
 											<?php }//end if ?>
 
-										<?php }//end foreach workdays?>
+										<?php }//end foreach workdays ?>
 
-									<?php } // END foreach post?>
+									<?php } // END foreach post ?>
 
 								</ul>
 

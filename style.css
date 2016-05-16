@@ -17,7 +17,7 @@ Author URI: www.studionext.pl
 
 
 /* ---------------------------------------------------------------
-	Basic HTML elements 
+	Basic HTML elements
 --------------------------------------------------------------- */
 *,
 *:before,
@@ -46,7 +46,7 @@ body.menu-open{
     overflow: hidden;
 }
 
-a{	
+a{
 	font-family: 'Lato', sans-serif;
 	text-decoration: none;
     -webkit-transition: all 0.4s ease;
@@ -89,7 +89,7 @@ p{
     font-family: 'Lato', serif;
     color: #575757;
     font-size: 16px;
-    line-height: 1.2;
+    line-height: 24px;
 }
 
 small{ font-size: 100%; }
@@ -100,6 +100,26 @@ h3 { font-size: 24px; margin-bottom: 7px; font-family: 'Lato', serif; font-weigh
 h4 { font-size: 16px; line-height: 22px; margin-bottom: 4px; font-family: 'Playfair Display', serif; color: #22293b; }
 h5 { font-size: 14px; font-family: 'Lato', serif; text-transform: uppercase; color: #9a9a9a; margin-bottom: 8px; }
 h6 { font-size: 14px; }
+
+
+/*page typography*/
+.page main h1, .page main h2, .page main h3, .page main h4, .page main h5, .page main h6{
+    font-family: 'Playfair Display', serif;
+    line-height: 1.2;
+    color: #181818;
+}
+
+.page main h1 { font-size: 46px; line-height: 50px; margin-bottom: 14px;}
+.page main h2 { font-size: 35px; line-height: 40px; margin-bottom: 10px; }
+.page main h3 { font-size: 28px; line-height: 34px; margin-bottom: 8px; }
+.page main h4 { font-size: 21px; line-height: 30px; margin-bottom: 4px; }
+.page main h5 { font-size: 17px; line-height: 24px; }
+.page main h6 { font-size: 14px; line-height: 21px; }
+.page main p { margin-bottom: 20px; }
+.page main ul { list-style-type: disc; padding-left: 17px; }
+.page main ul li { margin-bottom: 12px; font-size: 16px; line-height: 24px; }
+.page main a { color: #36baac; }
+.page main a:hover { color: #000; }
 
 
 /* ---------------------------------------------------------------
@@ -113,15 +133,6 @@ h6 { font-size: 14px; }
     display: block !important;
     opacity: 1 !important;
     visibility: visible !important;
-}
-
-.align-left,
-.align-left >img{
-    float: left;
-}
-
-.align-left >img{
-    margin-right: 5%;
 }
 
 .page--wrapper{
@@ -386,6 +397,53 @@ article.featured .article-content-wrap p{
 
 article.featured .article-content-wrap{
     width: 57%;
+}
+
+
+/*children-pages*/
+ul.children-pages{
+  display: table;
+  width: 100%;
+  list-style-type: none;
+  margin-top: -30px;
+}
+
+ul.children-pages li{
+  display: table;
+  width: 100%;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+  margin: 0 !important;
+}
+
+ul.children-pages li a{
+  display: block;
+  width: 100%;
+}
+
+ul.children-pages li a .page-enum{
+  display: block;
+  float: left;
+  width: 85px;
+  height: 90px;
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: #000;
+  line-height: 1;
+  padding-top: 20px;
+}
+
+ul.children-pages li a .page-name{
+  display: block;
+  float: left;
+  width: calc(100% - 85px);
+  color: #000;
+  font-size: 17px;
+  line-height: 25px;
+  padding: 34px 0 31px;
+}
+
+ul.children-pages li a:hover .page-name{
+  color: #36baac;
 }
 
 
@@ -893,7 +951,7 @@ header .header-wrap .container{
 }
 
 .header-wrap .top-panel ul li.phone a:hover{
-    opacity: 0.7; 
+    opacity: 0.7;
 }
 
 .header-wrap .top-panel .container .row-tight{
@@ -1113,7 +1171,7 @@ section.slider h1.title{
         background-image: url('assets/img/slider-bg.png');
     background-size: cover;
     background-position: center;
-    background-repeat: no-repeat;  
+    background-repeat: no-repeat;
 }
 
 section.slider small{
@@ -1132,7 +1190,7 @@ section.slider .owl-carousel{
     background-image: url('assets/img/slider-bg.png');
     background-size: contain;
     background-position: center;
-    background-repeat: no-repeat;  
+    background-repeat: no-repeat;
 }
 
 section.slider .owl-carousel .item{
@@ -1635,5 +1693,3 @@ section.banners .span4:first-child a{
 section.banners .span4:last-child a{
     text-align: right;
 }
-
-

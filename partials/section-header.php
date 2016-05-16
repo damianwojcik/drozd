@@ -22,7 +22,7 @@
 
 							?>
 
-							
+
 							<?php if( !empty($header_email) or !empty($header_phone)): ?>
 
 							<ul>
@@ -36,7 +36,7 @@
 
 								<?php if( !empty($header_phone) ): ?>
 
-									<li class="phone"><a href="callto:0322051313"><?php echo $header_phone; ?></a></li>
+									<li class="phone"><a href="callto:<?php echo $header_phone; ?>">Tel. <?php echo $header_phone; ?></a></li>
 
 								<?php endif; ?>
 
@@ -63,7 +63,7 @@
 						<div class="span4">
 
 							<div class="logo-wrapper">
-								
+
 								<a href="<?= SITE_URL; ?>">
 
 									<?php
@@ -111,7 +111,7 @@
 						<div class="span8">
 
 							<nav id="desktop-menu">
-								
+
 								<?php dynamic_sidebar('main_menu'); ?>
 
 							</nav>
@@ -127,4 +127,3 @@
 
 		</section>
 		<!-- END section header-wrap -->
-

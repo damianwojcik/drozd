@@ -10,7 +10,7 @@
 	.container,
 	header .header-wrap .container,
 	section.banners .container{
-		width: 100%;	
+		width: 100%;
 	}
 
 	h1{
@@ -133,7 +133,7 @@
 
 	section.banners .container{
 		padding-left: 45px;
-		padding-right: 45px; 
+		padding-right: 45px;
 	}
 
 
@@ -153,7 +153,7 @@
 		margin-bottom: 5px;
 	}
 
-	.span8.main, 
+	.span8.main,
 	.span4.aside{
 		width: 100%;
 	}
@@ -412,7 +412,7 @@
 		margin: auto;
 	}
 
-	
+
 	footer .container,
 	footer section.footer-top .container{
 		width: 90%;
@@ -453,6 +453,17 @@
 
 	article.featured .article-content-wrap p{
 		margin-bottom: 30px;
+	}
+
+	ul.children-pages li a .page-enum{
+		font-size: 30px;
+		padding-top: 24px;
+		width: 70px;
+	}
+
+	ul.children-pages li a .page-name{
+		font-size: 15px;
+		width: calc(100% - 70px);
 	}
 
 	.thumb-listing .thumb-photo-wrap{
@@ -526,7 +537,7 @@
 	section.slider .owl-carousel .item .slide-wrap{
 		vertical-align: top;
 	}
-	
+
 	section.slider .item .span7{
 		width: 100%;
 	}
@@ -843,6 +854,3 @@
 
 
 }
-
-
-
