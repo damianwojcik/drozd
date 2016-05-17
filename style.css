@@ -153,6 +153,49 @@ h6 { font-size: 14px; }
 }
 
 
+/*forms*/
+input[type="text"],
+input[type="email"],
+textarea{
+    font-family: 'Lato', serif;
+    background: #FFF;
+    width: 100%;
+    border: 0;
+    margin-bottom: 10px;
+    padding: 14px 12px;
+    color: #575757;
+    font-size: 14px;
+    line-height: 1.2;
+    border-radius: 2px;
+    outline: 0;
+}
+
+textarea{
+    height: 110px;
+    margin-bottom: 20px;
+    resize: none;
+}
+
+input:focus{
+    border: 0;
+    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
+    outline: 0;
+}
+
+input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, textarea:focus{
+  border: 0;
+}
+
+/*ninja form*/
+.text-wrap.label-above label, .textarea-wrap.label-above label{
+    display: none !important;
+}
+
+.field-wrap, #ninja_forms_required_items{
+    margin-bottom: 0px !important;
+}
+
+
 /*module featured-box*/
 .featured-box{
     padding: 35px 0 30px 0;
@@ -566,8 +609,8 @@ section.related-articles .btn.btn-transparent{
     background-size: cover;
     height: 9px;
     width: 12px;
-    left: 7%;
-    top: 44%;
+    left: 8%;
+    top: 37%;
 }
 
 .module-newsletter .email-wrap input[type="email"]{
@@ -1447,47 +1490,6 @@ aside section.form-wrap{
 
 aside section.form-wrap h3{
     border-bottom: 1px solid #d7d7d7;
-}
-
-input[type="text"],
-input[type="email"],
-textarea{
-    font-family: 'Lato', serif;
-    background: #FFF;
-    width: 100%;
-    border: 0;
-    margin-bottom: 10px;
-    padding: 14px 12px;
-    color: #575757;
-    font-size: 14px;
-    line-height: 1.2;
-    border-radius: 2px;
-    outline: 0;
-}
-
-textarea{
-    height: 110px;
-    margin-bottom: 20px;
-    resize: none;
-}
-
-input:focus{
-    border: 0;
-    box-shadow: 0 0 4px rgba(0, 0, 0, 0.2);
-    outline: 0;
-}
-
-input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, textarea:focus{
-  border: 0;
-}
-
-/*ninja form*/
-.text-wrap.label-above label, .textarea-wrap.label-above label{
-    display: none !important;
-}
-
-.field-wrap, #ninja_forms_required_items{
-    margin-bottom: 0px !important;
 }
 
 section.aside-contact a{

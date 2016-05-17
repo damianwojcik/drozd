@@ -7,7 +7,13 @@
 
 				<div class="span12">
 
-					<h1 class="title"><?php the_title(); ?></h1>
+					<h1 class="title">
+						<?php if( is_404() ){ ?>
+							Strony nie znaleziono
+						<?php }else{ ?>
+							<?php the_title(); ?>
+						<?php } ?>
+					</h1>
 
 				</div>
 
