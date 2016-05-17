@@ -39,7 +39,7 @@
 
     <div class="article-content-wrap">
 
-      <h4><?php echo $posts_array[0]->post_title; ?></h4>
+      <h4><a href="<?php the_permalink(); ?>"><?php echo $posts_array[0]->post_title; ?></a></h4>
 
       <p><?php echo $trimmed_content; ?></p>
 
@@ -64,7 +64,7 @@
 
       <article>
 
-        <h4><?php echo $posts_array[$i]->post_title; ?></h4>
+        <h4><a href="<?php the_permalink(); ?>"><?php echo $posts_array[$i]->post_title; ?></a></h4>
 
         <div class="wrap">
 

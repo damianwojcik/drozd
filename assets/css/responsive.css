@@ -436,6 +436,11 @@
 		margin: auto;
 	}
 
+	article h4{
+	    height: auto;
+			min-height: auto;
+	}
+
 	article.featured h4{
 		margin-top: 0;
 	}
@@ -896,5 +901,26 @@
 		margin-right: 0;
 	}
 
+
+}
+
+@media screen and (max-width: 430px){
+
+	.image-container{
+	  margin-bottom: 15px;
+	}
+
+	.image-container.justified-gallery > a:last-child,
+	.image-container.justified-gallery > div:last-child{
+		width: calc(100% - 20px) !important;
+	}
+
+	.image-container.justified-gallery > a:last-child > img,
+	.image-container.justified-gallery > div:last-child > img{
+		left: auto;
+		top: auto;
+		width: 100% !important;
+		margin: 0 !important;
+	}
 
 }

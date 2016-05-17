@@ -9,6 +9,12 @@
 	show_admin_bar(false);
 
 	//include php files
-	foreach ( glob ( TEMPLATE_PATH . "incl/*.php" ) as $filename ) {
-		include $filename;
-	}
+	include("incl/general.php");
+
+	include("incl/custom_functions.php");
+
+	include("incl/cpt.php");
+
+	include("incl/acf.php");
+
+	include("incl/widgets.php");

@@ -14,6 +14,14 @@ jQuery(document).ready(function($){
 	$(document).find('#ninja_forms_field_7').attr('placeholder', 'Treść wiadomości');
 
 
+	//justifiedGallery
+	$('.image-container').justifiedGallery({
+    rowHeight : 170,
+    margins : 10,
+		lastRow : 'nojustify'
+});
+
+
 	//adds heading to header sub-menu
 	$( ".header-wrap .sub-menu" ).prepend( "<h3>Poradnie</h3>" );
 
@@ -23,7 +31,7 @@ jQuery(document).ready(function($){
 
 			items: 1,
 		    loop: true,
-		    autoplay: false,
+		    autoplay: true,
 		    autoplayTimeout: 4000,
 		    autoplayHoverPause: true,
 		    nav: true

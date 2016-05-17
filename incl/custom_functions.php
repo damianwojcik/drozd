@@ -1,6 +1,3 @@
-
-<!-- Fix 404 Errors in WordPress Pagination -->
-
 <?php
 
 function bamboo_request($query_string )

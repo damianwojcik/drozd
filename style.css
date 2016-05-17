@@ -191,6 +191,7 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
   border: 0;
 }
 
+
 /*ninja form*/
 .text-wrap.label-above label, .textarea-wrap.label-above label{
     display: none !important;
@@ -301,6 +302,15 @@ article h3{
 article h4{
     min-height: 43px;
     margin-bottom: 35px;
+}
+
+article h4 a{
+  font-family: inherit;
+  color: inherit;
+}
+
+article h4 a:hover{
+  color: #36baac;
 }
 
 article blockquote{
@@ -1217,7 +1227,6 @@ section.slider{
 
 section.slider h1{
     margin-bottom: 25px;
-    font-family: 'Lato', serif;
 }
 
 section.slider h1 strong{
@@ -1235,7 +1244,7 @@ section.slider h1.title{
     font-weight: bold;
     padding: 60px 0 60px 45px;
     margin: 0;
-        background-image: url('assets/img/slider-bg.png');
+    background-image: url('assets/img/slider-bg.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -1875,4 +1884,50 @@ ul.article-tiles li p{
 
 .nav-links span{
   color: rgba(0, 0, 0, 0.3);
+}
+
+
+/* ---------------------------------------------------------------
+    gallery
+--------------------------------------------------------------- */
+.page main .gallery-wrapper h4{
+  margin-bottom: 25px;
+  margin-left: 10px;
+  font-size: 22px;
+}
+
+.image-container{
+  margin-bottom: 30px;
+}
+
+/*color-overlay*/
+.color-overlay{
+  display: table;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(70, 188, 172, 0.7);
+  -webkit-filter: opacity(0);
+  filter: opacity(0);
+  -webkit-transition: all 0.4s ease-in;
+  -moz-transition: all 0.4s ease-in;
+  transition: all 0.4s ease-in;
+}
+
+.color-overlay:hover{
+  -webkit-filter: opacity(1);
+  filter: opacity(1);
+}
+
+.color-overlay i{
+  display: table-cell;
+  vertical-align: middle;
+  text-align: center;
+  color: #FFF;
+  font-size: 36px;
+  position: relative;
 }

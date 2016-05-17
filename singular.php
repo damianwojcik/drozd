@@ -7,9 +7,9 @@
 	<section class="content animation-element" data-anim="slide_top">
 
 		<div class="container">
-			
+
 			<div class="row-tight">
-				
+
 				<div class="span8 main">
 
 					<main>
@@ -25,7 +25,7 @@
 
 						}?>
 
-						<?php 
+						<?php
 
 						$is_page = is_page();
 
@@ -46,7 +46,7 @@
 										<li><a href="#"><img src="<?= THEME_URL; ?>/assets/img/icons/facebook-like-btn.png" alt="Like!"></a></li>
 										<li><a href="#"><img src="<?= THEME_URL; ?>/assets/img/icons/facebook-share-btn.png" alt="Share on facebook"></a></li>
 									</ul>
-									
+
 								</div>
 
 							</div>
@@ -61,7 +61,50 @@
 						<!-- BEGIN page type template -->
 
 
-						<?php the_content(); ?>	
+						<?php the_content(); ?>
+
+
+						<!-- Gallery -->
+						<div class="gallery-wrapper">
+
+							<?php if( have_rows('gallery_container') ): ?>
+
+								<?php while ( have_rows('gallery_container') ) : the_row(); ?>
+
+								<?php
+
+									$title = get_sub_field('title');
+									$images = get_sub_field('gallery');
+
+								?>
+
+								<h4><?php echo $title; ?></h4>
+
+								<div class="image-container">
+
+					        <?php foreach( $images as $image ): ?>
+
+		                <a href="<?php echo $image['url']; ?>" rel="lightbox">
+
+		                     <img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" />
+
+												 <div class="color-overlay">
+												 	<i class="material-icons">search</i>
+												 </div>
+
+		                </a>
+
+					        <?php endforeach; ?>
+
+					    	</div>
+								<!-- END image-container -->
+
+								<?php endwhile; ?>
+
+							<?php endif; ?>
+
+						</div>
+						<!-- END gallery-wrapper -->
 
 
 						<?php endwhile; ?>
@@ -69,12 +112,12 @@
 					<?php endif; ?>
 
 					</main>
-					
+
 				</div>
 
 
 				<div class="span4 aside">
-					
+
 					<aside class="animation-element" data-anim="slide_top">
 						<!-- =================================================
 							section thumb-listing
@@ -94,7 +137,7 @@
 						<?php get_template_part("partials/aside", "related_articles"); ?>
 
 
-						
+
 					</aside>
 
 				</div>
