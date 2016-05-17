@@ -42,7 +42,8 @@
 
 	/*header nav*/
 	.header-wrap .header-navigation nav ul li a{
-		padding: 30px 25px;
+		padding: 30px 20px;
+		font-size: 13px;
 	}
 
 
@@ -101,12 +102,9 @@
 		width: 95%;
 	}
 
-	section.footer-navigation .row-tight .span6:first-child{
-		width: 75%;
-	}
-
-	section.footer-navigation .row-tight .span6:last-child{
-		width: 25%;
+	footer section.footer-navigation ul li a{
+		font-size: 13px;
+		padding: 35px 33px 30px 0;
 	}
 
 
@@ -579,8 +577,15 @@
 	}
 
 	section.intro .img-intro{
+		display: inline-block;
+		width: 100%;
 		margin: 0 auto 30px auto;
 		position: relative;
+		text-align: center;
+	}
+
+	section.intro .img-intro img{
+		display: inline-block;
 	}
 
 	section.news .section-headline .btn{
@@ -656,6 +661,7 @@
 
 	section.footer-navigation .row-tight .span6:last-child{
 		width: 100%;
+		margin-left: 0;
 		text-align: center;
 	}
 
@@ -688,11 +694,44 @@
 		margin-bottom: 10px;
 	}
 
+	ul.article-tiles{
+		margin-bottom: 0;
+	}
+
+	ul.article-tiles li{
+	  width: 100%;
+	  float: none;
+		margin: 0;
+		padding-bottom: 30px;
+		border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+	}
+
+	ul.article-tiles li:last-child{
+		border-bottom: 0;
+		padding-bottom: 0;
+	}
+
+	ul.article-tiles li:not(:first-child){
+		padding-top: 30px;
+	}
+
+	ul.article-tiles li:nth-child(3n-1){
+		margin-left: 0;
+	}
+
+	ul.article-tiles hr{
+		display: none;
+	}
+
 
 }
 
 
 @media screen and (max-width: 480px){
+
+	textarea{
+		padding-left: 26px;
+	}
 
 
 	/*modules*/
@@ -850,6 +889,11 @@
 
 	footer section.footer-top ul{
 		width: 100%;
+	}
+
+	.nav-links a,
+	.nav-links span{
+		margin-right: 0;
 	}
 
 

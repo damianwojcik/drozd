@@ -12,4 +12,3 @@
 	foreach ( glob ( TEMPLATE_PATH . "incl/*.php" ) as $filename ) {
 		include $filename;
 	}
-	

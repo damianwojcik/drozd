@@ -1,10 +1,10 @@
-					
+
 					<section class="intro animation-element" data-anim="slide_top">
 
 						<div class="wrap">
 
 						<?php if( have_rows('section_intro', 'option') ): ?>
-						    
+
 						    <?php while ( have_rows('section_intro', 'option') ) : the_row(); ?>
 
 						   		<?php
@@ -30,9 +30,12 @@
 
 									<?php endif; ?>
 
-									<img class="img-intro animation-element" data-anim="scale_up" src="<?php echo $section_image['url']; ?>" alt="<?php echo $section_image['alt']; ?>">
+									<a href="http://localhost/drozd/wp-content/uploads/2016/05/certyfikat.jpg" rel="lightbox"
+									class="img-intro animation-element" data-anim="scale_up">
+									<img src="<?php echo $section_image['url']; ?>" alt="<?php echo $section_image['alt']; ?>" />
+								</a>
 
-									<a href="#" class="btn btn-green btn-large">Czytaj więcej</a>
+									<a href="<?php echo get_page_link(18); ?>" class="btn btn-green btn-large">Czytaj więcej</a>
 
 								<?php endwhile; ?>
 
