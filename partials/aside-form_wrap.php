@@ -3,7 +3,7 @@
 
 							<h3>Umów się na wizytę</h3>
 
-							<p>Wyślij do nas wiadomość za pomocą formularza, a wkrótce się z Tobą skontaktujemy.</p>
+							<p>Wyślij do nas wiadomość, a wkrótce się z Tobą skontaktujemy.</p>
 
 							<!-- ninja form -->
 							<?php if( function_exists( 'ninja_forms_display_form' ) ){ ninja_forms_display_form( 5 ); } ?>

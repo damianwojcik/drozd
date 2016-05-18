@@ -428,6 +428,10 @@
 		margin-bottom: 10px;
 	}
 
+	.home a.tile-img-link{
+		margin-bottom: 0;
+	}
+
 
 	/*modules*/
 	.featured-box ul{
@@ -445,7 +449,7 @@
 		margin-top: 0;
 	}
 
-	article.featured .article-img-wrap{
+	article.featured a.tile-img-link{
 		width: 100%;
 		margin-bottom: 30px;
 	}
@@ -786,10 +790,14 @@
 		line-height: 24px;
 	}
 
-	article .article-img-wrap{
+	article a.tile-img-link{
 		width: 30%;
 		margin-right: 5%;
 		height: 80px;
+	}
+
+	article a.tile-img-link i{
+		font-size: 30px;
 	}
 
 	article .article-content-wrap{

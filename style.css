@@ -490,9 +490,9 @@ article.featured{
     border-bottom: 1px solid #ededed;
 }
 
-article.featured .article-img-wrap{
+article.featured a.tile-img-link{
     width: 38%;
-    height: 160px;
+    height: 220px;
     margin-right: 5%;
 }
 
@@ -501,6 +501,7 @@ article.featured h4{
     margin-top: -5px;
     margin-bottom: 20px;
     min-height: 24px;
+    line-height: 30px;
 }
 
 article.featured .article-content-wrap p{
@@ -1200,7 +1201,7 @@ header .header-wrap .container{
 
 .header-wrap  .header-navigation nav ul li a{
     display: block;
-    padding: 30px 28px;
+    padding: 30px 25px;
     font-size: 14px;
     text-transform: uppercase;
     font-weight: bold;

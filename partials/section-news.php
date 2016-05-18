@@ -35,7 +35,20 @@
 
   <article class="featured animation-element" data-anim="slide_top">
 
-    <div class="article-img-wrap" style="background-image: url(<?php echo $post_thumbnail[0] ?>);"></div>
+    <a href="<?php the_permalink(); ?>" class="tile-img-link">
+
+      <div class="tile-img"<?php if( !empty($thumbnail) ){ ?> style="background-image: url(<?php echo $thumbnail[0]; ?>)" <?php } ?>>
+
+        <?php if( empty($thumbnail) ){ ?>
+
+          <div class="image-placeholder">
+            <i class="material-icons">photo_camera</i>
+          </div>
+
+        <?php } ?>
+      </div>
+
+    </a>
 
     <div class="article-content-wrap">
 
@@ -56,7 +69,7 @@
     for ($i = 1; $i <= 2; $i++){
 
       $trimmed_content = wp_trim_words( $posts_array[$i]->post_content );
-      $post_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($posts_array[$i]), 'large' );
+      $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($posts_array[$i]), 'large' );
 
   ?>
 
@@ -68,7 +81,20 @@
 
         <div class="wrap">
 
-          <div class="article-img-wrap" style="background-image: url(<?php echo $post_thumbnail[0] ?>);"></div>
+          <a href="<?php the_permalink(); ?>" class="tile-img-link">
+
+            <div class="tile-img"<?php if( !empty($thumbnail) ){ ?> style="background-image: url(<?php echo $thumbnail[0]; ?>)" <?php } ?>>
+
+              <?php if( empty($thumbnail) ){ ?>
+
+                <div class="image-placeholder">
+                  <i class="material-icons">photo_camera</i>
+                </div>
+
+              <?php } ?>
+            </div>
+
+          </a>
 
           <div class="article-content-wrap">
 
