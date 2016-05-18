@@ -734,8 +734,13 @@
 
 @media screen and (max-width: 480px){
 
-	textarea{
-		padding-left: 26px;
+	.home textarea{
+		background: rgba(0, 0, 0, 0.05);
+		width: 90%;
+	}
+
+	.home #ninja_forms_field_7{
+		width: 90%;
 	}
 
 
@@ -789,6 +794,10 @@
 
 	article .article-content-wrap{
 		width: 65%
+	}
+
+	.form-wrap input{
+		background: rgba(0, 0, 0, 0.05);
 	}
 
 

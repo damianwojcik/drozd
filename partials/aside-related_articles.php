@@ -1,28 +1,41 @@
-						
+
 						<section class="related-articles animation-element" data-anim="slide_top">
-							
+
 							<h3>Powiązane artykuły</h3>
 
 							<?php $args = array( 'posts_per_page' => 3, 'category' => $category_id, );
 
 							$posts_array = get_posts( $args );
 
-							if (!empty($posts_array)){ 
+							if (!empty($posts_array)){
 
 								foreach ($posts_array as $post) {
 
-									$trimmed_content = wp_trim_words( $post->post_content ); 
-									$post_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post), 'large' );
+									$trimmed_content = wp_trim_words( $post->post_content );
+									$thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($post), 'thumbnail' );
 
 							?>
 
 								<article>
-							
-									<h4><?php echo $post->post_title; ?></h4>
+
+									<h4><a href="<?php the_permalink(); ?>"><?php echo $post->post_title; ?></a></h4>
 
 									<div class="wrap">
 
-										<div class="article-img-wrap" style="background-image: url(<?php echo $post_thumbnail[0] ?>);"></div>
+										<a href="<?php the_permalink(); ?>" class="tile-img-link">
+
+						          <div class="tile-img"<?php if( !empty($thumbnail) ){ ?> style="background-image: url(<?php echo $thumbnail[0]; ?>)" <?php } ?>>
+
+						            <?php if( empty($thumbnail) ){ ?>
+
+						              <div class="image-placeholder">
+						                <i class="material-icons">photo_camera</i>
+						              </div>
+
+						            <?php } ?>
+						          </div>
+
+						        </a>
 
 										<div class="article-content-wrap">
 

@@ -19,13 +19,14 @@ jQuery(document).ready(function($){
     rowHeight : 170,
     margins : 10,
 		lastRow : 'nojustify'
-});
+	});
 
 
 	//adds heading to header sub-menu
 	$( ".header-wrap .sub-menu" ).prepend( "<h3>Poradnie</h3>" );
 
 
+	//owl carousel
 	function owl_init(){
 		$('.owl-carousel').owlCarousel({
 

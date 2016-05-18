@@ -32,15 +32,20 @@
 
                 <li>
 
-                  <?php if( !empty($thumbnail) ): ?>
+									<a href="<?php the_permalink(); ?>" class="tile-img-link">
 
-                    <a href="<?php the_permalink(); ?>" class="tile-img-link">
+										<div class="tile-img"<?php if( !empty($thumbnail) ){ ?> style="background-image: url(<?php echo $thumbnail[0]; ?>)" <?php } ?>>
 
-                      <div class="tile-img" style="background-image: url(<?php echo $thumbnail[0]; ?>)"></div>
+											<?php if( empty($thumbnail) ){ ?>
 
-                    </a>
+												<div class="image-placeholder">
+													<i class="material-icons">photo_camera</i>
+												</div>
 
-                  <?php endif; ?>
+											<?php } ?>
+										</div>
+
+									</a>
 
                   <!-- date -->
                   <?php echo '<time datetime="'.date('c').'">'.date('Y/m/d').'</time>';?>
