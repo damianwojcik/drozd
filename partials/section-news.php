@@ -27,7 +27,7 @@
 
       $trimmed_content = wp_trim_words( $posts_array[0]->post_content );
 
-      $post_thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($posts_array[0]), 'large' );
+      $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($posts_array[0]), 'large' );
 
     }
 
@@ -37,7 +37,7 @@
 
     <a href="<?php the_permalink(); ?>" class="tile-img-link">
 
-      <div class="tile-img"<?php if( !empty($thumbnail) ){ ?> style="background-image: url(<?php echo $thumbnail[0]; ?>)" <?php } ?>>
+      <div class="tile-img" <?php if( !empty($thumbnail) ){ ?> style="background-image: url(<?php echo $thumbnail[0]; ?>)" <?php } ?>>
 
         <?php if( empty($thumbnail) ){ ?>
 

@@ -13,7 +13,7 @@ Author URI: www.studionext.pl
 /* Google Fonts import */
 @import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
 @import url(https://fonts.googleapis.com/css?family=Montserrat);
-@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700);
+@import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700&subset=latin,latin-ext);
 
 
 /* ---------------------------------------------------------------
@@ -201,6 +201,39 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
     margin-bottom: 0px !important;
 }
 
+.ninja-forms-required-items{
+  margin-bottom: 15px;
+}
+
+.home .ninja-forms-required-items{
+  display: none;
+}
+
+#ninja_forms_form_5_wrap p{
+  color: red;
+}
+
+.ninja-forms-response-msg.ninja-forms-error-msg{
+  margin-bottom: 20px;
+  color: red;
+}
+
+aside .form-wrap p{
+  margin: 0;
+  padding: 0;
+  min-height: auto;
+}
+
+aside .form-wrap p.leading{
+  margin-bottom: 10px;
+  padding: 15px 0;
+}
+
+#ninja_forms_field_5_error,
+#ninja_forms_field_6_error{
+  margin-bottom: 30px;
+}
+
 
 /*tile-img*/
 a.tile-img-link{
@@ -256,7 +289,7 @@ a.tile-img-link .tile-img:hover{
   display: table-cell;
   vertical-align: middle;
   font-size: 50px;
-  color: #FFF;
+  color: rgba(255, 255, 255, 0.6);
 }
 
 aside .image-placeholder i{
@@ -366,6 +399,10 @@ article h4{
     margin-bottom: 35px;
 }
 
+aside article h4{
+  min-height: auto;
+}
+
 article h4 a{
   font-family: inherit;
   color: inherit;
@@ -393,12 +430,6 @@ article blockquote p{
     line-height: 1.2;
     margin: 0;
     padding: 0;
-}
-
-article p.lead{
-    color: #2c2a2a;
-    font-size: 18px;
-    line-height: 30px;
 }
 
 article p{
@@ -481,6 +512,13 @@ article .article-content-wrap p{
     height: 75px;
     margin-bottom: 20px;
     overflow: hidden;
+}
+
+.single main .btn,
+.single main .btn:hover{
+  float: left;
+  text-align: left;
+  margin-top: 30px;
 }
 
 
@@ -628,16 +666,16 @@ section.related-articles article{
     border-bottom: 1px solid #ededed;
 }
 
+section.related-articles article:last-of-type{
+  border-bottom: none;
+}
+
 section.related-articles article h4{
     margin-bottom: 25px;
 }
 
 section.related-articles article p{
     padding: 0;
-}
-
-section.related-articles .btn.btn-transparent{
-    margin-top: 30px;
 }
 
 
@@ -1091,6 +1129,10 @@ header .header-wrap .container{
     display: table;
     width: 100%;
     padding: 15px 0;
+}
+
+.header-wrap  .header-navigation .logo-wrapper .logo{
+  width: 100px;
 }
 
 
@@ -1577,6 +1619,10 @@ aside p{
 
 aside section{
     padding: 20px 45px 40px 45px;
+}
+
+aside article a.tile-img-link{
+  margin-bottom: 0;
 }
 
 

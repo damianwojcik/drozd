@@ -169,6 +169,9 @@
 		width: 100%;
 	}
 
+	.home a.tile-img-link{
+		margin-bottom: 0;
+	}
 
 	/*modules*/
 	section.slider h1 strong{
@@ -428,10 +431,6 @@
 		margin-bottom: 10px;
 	}
 
-	.home a.tile-img-link{
-		margin-bottom: 0;
-	}
-
 
 	/*modules*/
 	.featured-box ul{
@@ -443,6 +442,10 @@
 	article h4{
 	    height: auto;
 			min-height: auto;
+	}
+
+	.home article h4{
+		margin-bottom: 25px;
 	}
 
 	article.featured h4{

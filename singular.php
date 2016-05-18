@@ -1,5 +1,11 @@
 <?php get_header(); ?>
 
+<?php
+	$categories = get_the_category();
+	$category_id = $categories[0]->cat_ID;
+	$category_link = get_category_link( $category_id );
+?>
+
 
 	<!-- =================================================
 			section content
@@ -36,7 +42,11 @@
 
 							<div class="article-heading">
 
-								<div class="article-heading-img-wrap" style="background-image: url(<?php echo $post_thumbnail['0']; ?>);"></div>
+								<?php if( !empty($post_thumbnail) ){ ?>
+
+									<div class="article-heading-img-wrap" style="background-image: url(<?php echo $post_thumbnail['0']; ?>);"></div>
+
+								<?php } ?>
 
 								<h2><?php the_title(); ?></h2>
 
@@ -51,8 +61,6 @@
 
 							</div>
 
-						<a href="#" class="btn btn-transparent">Wróć</a>
-
 						</article>
 
 						<?php endif; ?>
@@ -62,6 +70,12 @@
 
 
 						<?php the_content(); ?>
+
+						<?php if( is_single() ){ ?>
+
+							<a href="<?php echo $category_link; ?>" class="btn btn-transparent btn-back">Wróć</a>
+
+						<?php } ?>
 
 
 						<!-- Gallery -->
@@ -78,26 +92,34 @@
 
 								?>
 
-								<h4><?php echo $title; ?></h4>
+								<!-- gallery title -->
+								<?php if( !empty($title) ){ ?>
+									<h4><?php echo $title; ?></h4>
+								<?php } ?>
 
-								<div class="image-container">
+								<!-- gallery images -->
+								<?php if( !empty($images) ){ ?>
 
-					        <?php foreach( $images as $image ): ?>
+									<div class="image-container">
 
-		                <a href="<?php echo $image['url']; ?>" rel="lightbox">
+						        <?php foreach( $images as $image ): ?>
+
+			                <a href="<?php echo $image['url']; ?>" rel="lightbox">
 
 		                     <img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" />
 
 												 <div class="color-overlay">
-												 	<i class="material-icons">search</i>
+													 <i class="material-icons">search</i>
 												 </div>
 
-		                </a>
+			                </a>
 
-					        <?php endforeach; ?>
+						        <?php endforeach; ?>
 
-					    	</div>
-								<!-- END image-container -->
+						    	</div>
+									<!-- END image-container -->
+
+								<?php } ?>
 
 								<?php endwhile; ?>
 
