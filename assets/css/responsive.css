@@ -69,7 +69,7 @@
 	}
 
 	section.slider .owl-carousel .item .slide-wrap{
-		padding-left: 100px;
+		padding-left: 70px;
 	}
 
 	section.slider .owl-carousel .owl-controls .owl-nav .owl-next,
@@ -177,6 +177,10 @@
 	section.slider h1 strong{
 		font-size: 80px;
 		line-height: 1;
+	}
+
+	section.slider h1{
+		font-size: 35px;
 	}
 
 	.featured-box{
@@ -292,6 +296,11 @@
 
 
 	/*slider*/
+	section.slider .owl-carousel .item .slide-wrap,
+	section.slider .owl-carousel .item .container .span6:last-child{
+		height: 345px;
+	}
+
 	section.slider small{
 		font-size: 18px;
 	}
@@ -301,7 +310,7 @@
 	}
 
 	section.slider .owl-carousel .item .slide-wrap{
-		padding: 80px 0 45px 100px;
+		padding: 0 0 0 100px;
 	}
 
 	/*section featured*/
@@ -542,13 +551,14 @@
 	/*slider*/
 	section.slider h1{
 		margin-bottom: 15px;
+		font-size: 32px;
 	}
 
 	section.slider .owl-carousel .item .slide-wrap{
 		vertical-align: top;
 	}
 
-	section.slider .item .span7{
+	section.slider .item .span6{
 		width: 100%;
 	}
 
@@ -560,9 +570,17 @@
 	section.slider .owl-carousel .item .slide-wrap{
 		display: table;
 		width: 100%;
-		padding: 40px 0 275px;
+		padding: 40px 0 0 0;
 		text-align: center;
-		height: 524px;
+		height: 200px;
+	}
+
+	section.slider .owl-carousel .item .slide-wrap small{
+		margin-bottom: 0;
+	}
+
+	section.slider .owl-carousel .item .container .span6:last-child{
+	  height: 310px;
 	}
 
 	section.slider .owl-carousel .owl-controls .owl-nav .owl-next,
@@ -741,13 +759,17 @@
 
 @media screen and (max-width: 480px){
 
+	#ninja_forms_form_5_cont input{
+		width: 100%;
+	}
+	
 	.home textarea{
 		background: rgba(0, 0, 0, 0.05);
-		width: 90%;
+		width: 100%;
 	}
 
 	.home #ninja_forms_field_7{
-		width: 90%;
+		width: 100%;
 	}
 
 
@@ -844,6 +866,19 @@
 	/*slider*/
 	section.slider .owl-carousel .item .container{
 		width: 100%;
+	}
+
+	section.slider .owl-carousel .item .slide-wrap{
+		width: 90%;
+		margin: 0 auto;
+	}
+
+	section.slider .owl-carousel .item .slide-wrap{
+		height: 230px;
+	}
+
+	section.slider .owl-carousel .item .container .span6:last-child{
+		height: 290px;
 	}
 
 	section.slider .owl-carousel .owl-controls .owl-nav .owl-next,

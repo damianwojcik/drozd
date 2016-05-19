@@ -53,8 +53,7 @@
 								<div class="article-heading-social">
 
 									<ul>
-										<li><a href="#"><img src="<?= THEME_URL; ?>/assets/img/icons/facebook-like-btn.png" alt="Like!"></a></li>
-										<li><a href="#"><img src="<?= THEME_URL; ?>/assets/img/icons/facebook-share-btn.png" alt="Share on facebook"></a></li>
+										<li><div class="fb-like" data-href="http://localhost/drozd/" data-layout="button" data-action="like" data-show-faces="false" data-share="true"></div></li>
 									</ul>
 
 								</div>

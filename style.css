@@ -474,6 +474,10 @@ article .article-heading-social{
     display: table;
 }
 
+article .article-heading-social form{
+  margin-right: 40px;
+}
+
 article .article-heading-social ul{
     list-style-type: none;
     display: table;
@@ -1390,10 +1394,11 @@ section.slider .owl-carousel .item .slide-wrap{
     height: 474px;
 }
 
-section.slider .owl-carousel .item .container{
+section.slider .owl-carousel .item .container .span6:last-child{
     background-size: contain;
-    background-position: right;
+    background-position: bottom;
     background-repeat: no-repeat;
+    height: 474px;
 }
 
 
