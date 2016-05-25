@@ -22,11 +22,11 @@ Author URI: www.studionext.pl
 *,
 *:before,
 *:after{
-    -webkit-box-sizing: border-box;
-	-moz-box-sizing: border-box;
-	box-sizing: border-box;
-    -webkit-font-smoothing: antialiased;
-    -moz-osx-font-smoothing: grayscale;
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
 *:focus{
@@ -35,11 +35,11 @@ Author URI: www.studionext.pl
 }
 
 body{
-    background: #f9f9f9;
-	font-family: 'Lato', sans-serif;
-	font-weight: 400;
-    font-size: 100%;
-    color: #5c5c5c;
+  background: #f9f9f9;
+  font-family: 'Lato', sans-serif;
+  font-weight: 400;
+  font-size: 100%;
+  color: #5c5c5c;
 }
 
 body.menu-open{
@@ -49,11 +49,11 @@ body.menu-open{
 a{
 	font-family: 'Lato', sans-serif;
 	text-decoration: none;
-    -webkit-transition: all 0.4s ease;
-    -moz-transition: all 0.4s ease;
-    -ms-transition: all 0.4s ease;
-    -o-transition: all 0.4s ease;
-    transition: all 0.4s ease;
+  -webkit-transition: all 0.4s ease;
+  -moz-transition: all 0.4s ease;
+  -ms-transition: all 0.4s ease;
+  -o-transition: all 0.4s ease;
+  transition: all 0.4s ease;
 }
 
 ul, ol, li{
@@ -67,13 +67,13 @@ img{
 }
 
 form{
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 input[type="text"], input[type="password"], input[type="email"], textarea, select, input[type="submit"], input[type="reset"], input[type="button"]{
-    margin: 0;
-    padding: 0;
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -211,11 +211,20 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 
 #ninja_forms_form_5_wrap p{
   color: red;
+
+}
+
+#ninja_forms_form_5_wrap p{
+    color: #D56666;
+    font-size: 13px;
+    line-height: 1.2;
+    margin-bottom: 0;
 }
 
 .ninja-forms-response-msg.ninja-forms-error-msg{
-  margin-bottom: 20px;
-  color: red;
+  margin-bottom: 15px;
+  background-color: #FFD2D2;
+  padding: 10px 10px 10px 20px;
 }
 
 aside .form-wrap p{
@@ -232,6 +241,22 @@ aside .form-wrap p.leading{
 #ninja_forms_field_5_error,
 #ninja_forms_field_6_error{
   margin-bottom: 30px;
+}
+
+#ninja_forms_field_5_error,
+#ninja_forms_field_6_error{
+    background-color: #FFD2D2;
+    padding: 10px 10px 10px 20px;
+    color: #D56666;
+    font-size: 13px;
+    line-height: 1.2;
+    position: relative;
+    top: -10px;
+    margin-bottom: 10px;
+}
+
+.ninja-forms-required-items{
+    display: none;
 }
 
 
@@ -792,10 +817,10 @@ section.related-articles article p{
 }
 
 .sidebar-menu #mobile-menu li a{
-    font-size: 24px;
+    font-size: 20px;
     text-transform: uppercase;
     line-height: 1;
-    padding: 35px 0;
+    padding: 20px 0;
     color: #FFF;
     font-weight: bold;
     display: block;
@@ -813,7 +838,7 @@ section.related-articles article p{
     font-weight: normal;
     font-size: 35px;
     color: #FFF;
-    line-height: 52px;
+    line-height: 18px;
     display: block;
     position: absolute;
     right: 0;
@@ -835,9 +860,8 @@ section.related-articles article p{
 .sidebar-menu #mobile-menu ul.sub-menu{
     min-width: 100%;
     display: none;
-
     margin: 0;
-    margin-bottom: 35px;
+    margin-bottom: 20px;
     list-style-type: disc;
     padding-left: 15px;
 }
@@ -851,8 +875,8 @@ section.related-articles article p{
 
 .sidebar-menu #mobile-menu ul.sub-menu li a{
     padding: 0;
-    font-size: 17px;
-    line-height: 40px;
+    font-size: 15px;
+    line-height: 32px;
     font-weight: normal;
     text-transform: none;
     color: #b6c0d8;
