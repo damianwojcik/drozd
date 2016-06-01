@@ -132,6 +132,13 @@
 
 					<?php endif; ?>
 
+
+						<!-- =================================================
+							section related-articles
+						================================================== -->
+						<?php get_template_part("partials/aside", "related_articles"); ?>
+
+
 					</main>
 
 				</div>
@@ -144,7 +151,7 @@
 							section aside-map
 						================================================== -->
 						<?php get_template_part("partials/aside", "map"); ?>
-						
+
 						<!-- =================================================
 							section thumb-listing
 						================================================== -->
@@ -160,7 +167,7 @@
 						<!-- =================================================
 							section related-articles
 						================================================== -->
-						<?php get_template_part("partials/aside", "related_articles"); ?>
+						<?php //get_template_part("partials/aside", "related_articles"); ?>
 
 
 

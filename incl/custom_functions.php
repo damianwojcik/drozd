@@ -20,4 +20,5 @@ function bamboo_pre_get_posts( $query ) {
     }
 }
 
+
 ?>

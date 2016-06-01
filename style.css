@@ -125,6 +125,7 @@ h6 { font-size: 14px; }
 .page main ul li { margin-bottom: 12px; font-size: 16px; line-height: 24px; }
 .page main a { color: #36baac; }
 .page main a:hover { color: #000; }
+.page main a.btn-green { color: #FFF; }
 
 
 /* ---------------------------------------------------------------
@@ -189,6 +190,18 @@ input:focus{
 
 input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focus, textarea:focus{
   border: 0;
+}
+
+
+/*social share plugin*/
+.ssba, .ssba a{
+    position: relative;
+    top: -8px;
+}
+
+.single-doctor .ssba,
+.single-doctor .ssba a{
+    display: none;
 }
 
 
@@ -491,7 +504,7 @@ article .article-heading{
 
 article .article-heading h2{
     color: #000;
-    margin-bottom: 25px;
+    margin-bottom: 20px;
 }
 
 article .article-heading-img-wrap{
@@ -555,7 +568,6 @@ article .article-content-wrap p{
 
 .single main .btn,
 .single main .btn:hover{
-  float: left;
   text-align: left;
   margin-top: 30px;
 }
@@ -717,6 +729,27 @@ section.related-articles article p{
     padding: 0;
 }
 
+.main section.related-articles{
+    padding-top: 30px;
+    margin-top: 30px;
+    border-top: 1px solid #ededed;
+}
+
+.main section.related-articles h3{
+    font-size: 24px;
+    line-height: 30px;
+}
+.main section.related-articles article h4{
+    min-height: auto;
+    margin-bottom: 20px;
+}
+
+.main section.related-articles a.tile-img-link{
+    margin-bottom: 0;
+}
+
+
+
 
 /*module newsletter*/
 .module-newsletter form{
@@ -770,7 +803,7 @@ section.related-articles article p{
     height: 9px;
     width: 12px;
     left: 8%;
-    top: 37%;
+    top: 41%;
 }
 
 .module-newsletter .email-wrap input[type="email"]{

@@ -36,7 +36,7 @@
 
 							</p>
 
-							<form action="">
+							<form method="post" action="<?= SITE_URL; ?>/newsletter">
 
 								<div class="email-wrap">
 
@@ -52,7 +52,9 @@
 
 							</form>
 
+
 						</div>
+						<!-- END module-newsletter -->
 
 					</div>
 					<!-- END span4 -->

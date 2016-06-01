@@ -1,7 +1,7 @@
 
 						<?php $args = array(
-							'posts_per_page'   => 3,
-							'post_type'        => 'doctor',
+							'posts_per_page'   => -1,
+							'post_type'        => 'doctor'
 							);
 
 						$posts_array = get_posts( $args );
@@ -38,13 +38,14 @@
 											$dayAndHour = ' ' . $days['days'] . $days['hours'];
 
 											$translate = array(
-											"Poniedziałek" => "Monday",
-											"Wtorek" => "Tuesday",
-											"Środa" => "Wednesday",
-											"Czwartek" => "Thursday",
-											"Piątek" => "Friday",
-											"Sobota" => "Saturday",
-											"Niedziela" => "Sunday" );
+												"Poniedziałek" => "Monday",
+												"Wtorek" => "Tuesday",
+												"Środa" => "Wednesday",
+												"Czwartek" => "Thursday",
+												"Piątek" => "Friday",
+												"Sobota" => "Saturday",
+												"Niedziela" => "Sunday"
+											);
 
 											$daysOfDoctor = strtr($dayAndHour, $translate);
 

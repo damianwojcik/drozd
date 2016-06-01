@@ -1,4 +1,6 @@
 
+	<?php $category_link = get_category_link( 3 ); ?>
+
 						<section class="related-articles animation-element" data-anim="slide_top">
 
 							<h3>Powiązane artykuły</h3>

@@ -10,12 +10,6 @@
 	<link rel="icon" href="<?= THEME_URL; ?>/favicon.ico" type="image/png">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
-	<meta property="og:url"           content="http://localhost/drozd/" />
-	<meta property="og:type"          content="website" />
-	<meta property="og:title"         content="Przychodnia Drozd" />
-	<meta property="og:description"   content="Prywatna Przychodnia Specjalistyczna" />
-	<meta property="og:image"         content="http://localhost/drozd/assets/img/logo.png" />
-
 
 	<!-- HTML 5 SUPPORT
 	================================================== -->
@@ -29,18 +23,6 @@
 
 </head>
 <body <?php body_class(); ?>>
-
-
-<!-- facebook SDK -->
-<div id="fb-root"></div>
-<script>(function(d, s, id) {
-	var js, fjs = d.getElementsByTagName(s)[0];
-	if (d.getElementById(id)) return;
-	js = d.createElement(s); js.id = id;
-	js.src = "//connect.facebook.net/pl_PL/sdk.js#xfbml=1&version=v2.6";
-	fjs.parentNode.insertBefore(js, fjs);
-	}(document, 'script', 'facebook-jssdk'));
-</script>
 
 
 <!-- =================================================

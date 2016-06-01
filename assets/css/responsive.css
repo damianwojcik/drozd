@@ -773,6 +773,11 @@
 		display: none;
 	}
 
+	.main section.related-articles article h4{
+		font-size: 16px;
+		line-height: 24px;
+	}
+
 
 }
 

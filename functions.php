@@ -18,3 +18,5 @@
 	include("incl/acf.php");
 
 	include("incl/widgets.php");
+
+	include("incl/newsletter.php");
