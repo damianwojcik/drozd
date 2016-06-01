@@ -11,8 +11,8 @@ Author URI: www.studionext.pl
 
 
 /* Google Fonts import */
-@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700);
-@import url(https://fonts.googleapis.com/css?family=Montserrat);
+@import url(https://fonts.googleapis.com/css?family=Lato:400,300,700&subset=latin,latin-ext);
+@import url(https://fonts.googleapis.com/css?family=Montserrat&subset=latin,latin-ext);
 @import url(https://fonts.googleapis.com/css?family=Playfair+Display:400,700&subset=latin,latin-ext);
 
 
@@ -47,13 +47,13 @@ body.menu-open{
 }
 
 a{
-	font-family: 'Lato', sans-serif;
-	text-decoration: none;
-  -webkit-transition: all 0.4s ease;
-  -moz-transition: all 0.4s ease;
-  -ms-transition: all 0.4s ease;
-  -o-transition: all 0.4s ease;
-  transition: all 0.4s ease;
+    font-family: 'Lato', sans-serif;
+    text-decoration: none;
+    -webkit-transition: all 0.4s ease;
+    -moz-transition: all 0.4s ease;
+    -ms-transition: all 0.4s ease;
+    -o-transition: all 0.4s ease;
+    transition: all 0.4s ease;
 }
 
 ul, ol, li{
@@ -86,7 +86,7 @@ h1,h2,h3,h4,h5,h6, blockquote{
 }
 
 p{
-    font-family: 'Lato', serif;
+    font-family: 'Lato', sans-serif;
     color: #575757;
     font-size: 16px;
     line-height: 24px;
@@ -101,9 +101,9 @@ hr{
 
 h1 { font-size: 60px; margin-bottom: 14px; font-family: 'Playfair Display', serif; color: #FFF; }
 h2 { font-size: 22px; margin-bottom: 10px; font-family: 'Playfair Display', serif; color: #FFF; font-weight: 700; }
-h3 { font-size: 24px; margin-bottom: 7px; font-family: 'Lato', serif; font-weight: bold; text-transform: uppercase; color: #22293b; }
+h3 { font-size: 24px; margin-bottom: 7px; font-family: 'Lato', sans-serif; font-weight: bold; text-transform: uppercase; color: #22293b; }
 h4 { font-size: 16px; line-height: 22px; margin-bottom: 4px; font-family: 'Playfair Display', serif; color: #22293b; }
-h5 { font-size: 14px; font-family: 'Lato', serif; text-transform: uppercase; color: #9a9a9a; margin-bottom: 8px; }
+h5 { font-size: 14px; font-family: 'Lato', sans-serif; text-transform: uppercase; color: #9a9a9a; margin-bottom: 8px; }
 h6 { font-size: 14px; }
 
 
@@ -162,7 +162,7 @@ h6 { font-size: 14px; }
 input[type="text"],
 input[type="email"],
 textarea{
-    font-family: 'Lato', serif;
+    font-family: 'Lato', sans-serif;
     background: #FFF;
     width: 100%;
     border: 0;
@@ -228,14 +228,8 @@ input[type="text"]:focus, input[type="password"]:focus, input[type="email"]:focu
 }
 
 aside .form-wrap p{
-  margin: 0;
-  padding: 0;
   min-height: auto;
-}
-
-aside .form-wrap p.leading{
-  margin-bottom: 10px;
-  padding: 15px 0;
+  margin-bottom: 20px;
 }
 
 #ninja_forms_field_5_error,
@@ -354,14 +348,26 @@ aside .image-placeholder i{
     min-height: 108px;
 }
 
-.featured-box ul li{
+.featured-box ul li a{
+    display: block;
     position: relative;
-    line-height: 40px;
+    line-height: 1.6;
+    padding: 5px 0;
     font-size: 16px;
     border-bottom: 2px solid rgba(255, 255, 255, 0.1);
+    color: rgba(255, 255, 255, 0.8);
 }
 
-.featured-box ul li:before{
+.featured-box ul li a:hover{
+    color: rgba(255, 255, 255, 1);
+}
+
+.featured-box ul li:last-child a{
+    border-bottom: 0;
+    padding-bottom: 0;
+}
+
+.featured-box ul li a:before{
     content: ' ';
     background-image: url('assets/img/icons/icon-list-checked.png');
     background-size: cover;
@@ -403,6 +409,10 @@ article{
 
 .home article{
     padding: 30px 0;
+}
+
+.home .row-articles .span6:nth-child(n+3) article{
+    border-top: 2px solid #f6f6f6;
 }
 
 article h2{
@@ -679,7 +689,7 @@ ul.children-pages li a:hover .page-name{
     margin-top: 0;
     color: #2d4d98;
     font-weight: 600;
-    font-family: 'Lato', serif;
+    font-family: 'Lato', sans-serif;
     font-size: 14px;
     margin-bottom: 0;
 }
@@ -734,6 +744,10 @@ section.related-articles article p{
     margin-bottom: 30px;
 }
 
+.module-newsletter p.confirmation{
+    margin-top: 30px;
+}
+
 .module-newsletter .submit-wrap{
     float: left;
     width: 40%;
@@ -762,7 +776,7 @@ section.related-articles article p{
 .module-newsletter .email-wrap input[type="email"]{
     display: block;
     float: left;
-    font-family: 'Lato', serif;
+    font-family: 'Lato', sans-serif;
     background: #FFF;
     width: 100%;
     border: 0;
@@ -902,7 +916,7 @@ input[type="submit"],
 input[type="submit"]:hover{
     background: #36baac;
     position: relative;
-    font-family: 'Lato', serif;
+    font-family: 'Lato', sans-serif;
     font-size: 14px;
     font-weight: 600;
     color: #FFF;
@@ -1562,6 +1576,13 @@ section.content .container{
     background: #FFF;
 }
 
+
+/*section mobile-map*/
+section.mobile-map{
+    display: none;
+}
+
+
 /*section intro*/
 section.intro{
     padding: 40px 45px;
@@ -1617,11 +1638,16 @@ section.news .section-headline a{
 }
 
 section.news .span6{
-    width: 48%;
+    width: 50%;
 }
 
-section.news .span6:nth-last-child(even){
-    margin-right: 4%;
+section.news .row-articles article h4{
+    height: 40px;
+    overflow: hidden;
+}
+
+section.news .row-articles .span6:nth-child(2n+1) article{
+    padding-right: 30px;
 }
 
 
@@ -1632,32 +1658,46 @@ aside{
     display: table;
     width: 100%;
     box-shadow: 2px 0px 0px #f6f6f6 inset;
+    table-layout: fixed;
 }
 
 aside h3{
     font-size: 16px;
-    padding: 15px 0;
+    padding-bottom: 15px;
     border-bottom: 1px solid #ededed;
+    margin-bottom: 25px;
 }
 
 aside p{
     min-height: 57px;
-    padding: 15px 0;
-    margin-bottom: 10px;
+    margin-bottom: 25px;
 }
 
 aside section{
-    padding: 20px 45px 40px 45px;
+    padding: 40px 45px 40px 45px;
+}
+
+aside section:first-child{
+    padding-top: 35px;
+}
+
+aside section.aside-map{
+    padding-bottom: 0;
 }
 
 aside article a.tile-img-link{
   margin-bottom: 0;
 }
 
+aside section iframe{
+    display: inline-block;
+}
+
 
 /*section form-wrap*/
 aside section.form-wrap{
     background: #eeeeee;
+    padding-top: 35px;
 }
 
 aside section.form-wrap h3{

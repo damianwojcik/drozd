@@ -1,4 +1,4 @@
-						
+
 						<?php $args = array(
 							'posts_per_page'   => 3,
 							'post_type'        => 'doctor',
@@ -15,7 +15,7 @@
 
 							<h3>Dzisiaj Przyjmują</h3>
 
-							<p>Rus et interdum adipisci wisi mauris lorem nec malesuada fame:</p>
+							<p>Godziny przyjmowania lekarzy są orientacyjne, przed wizytą prosimy o telefoniczną weryfikację z przychodnią.</p>
 
 							<?php if (!empty($posts_array)){ ?>
 
@@ -34,7 +34,7 @@
 										//displays doctors working on current day
 										foreach ($workdays as $days) {
 
-											
+
 											$dayAndHour = ' ' . $days['days'] . $days['hours'];
 
 											$translate = array(
@@ -56,7 +56,15 @@
 
 													<a href="<?php the_permalink(); ?>">
 
-														<div class="thumb-photo-wrap" style="background-image: url(<?php echo $photo; ?>);"></div>
+														<?php if(!empty($photo)) { ?>
+
+															<div class="thumb-photo-wrap" style="background-image: url(<?php echo $photo; ?>);"></div>
+
+														<?php }else {?>
+
+															<div class="thumb-photo-wrap" style="background-image: url(<?= THEME_URL; ?>/assets/img/doctor-placeholder.jpg);"></div>
+
+														<?php } ?>
 
 														<div class="thumb-item-details">
 
@@ -86,4 +94,3 @@
 
 							</section>
 							<!-- END section thumb-listing -->
-

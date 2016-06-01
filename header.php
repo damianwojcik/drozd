@@ -8,6 +8,7 @@
 	<title><?php wp_title(); ?></title>
 	<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 	<link rel="icon" href="<?= THEME_URL; ?>/favicon.ico" type="image/png">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 
 	<meta property="og:url"           content="http://localhost/drozd/" />
 	<meta property="og:type"          content="website" />

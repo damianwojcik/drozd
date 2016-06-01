@@ -44,9 +44,22 @@
 
 										<?php while ( have_rows('list', 'option') ) : the_row();  ?>
 
-											<?php $list_element = get_sub_field('list_element'); ?>
-											
-											<li><?php echo $list_element; ?></li>
+											<?php if( have_rows('list_element', 'option') ): ?>
+
+												<?php while ( have_rows('list_element', 'option') ) : the_row();  ?>
+
+													<?php
+
+														$text = get_sub_field('text');
+														$url = get_sub_field('url');
+
+													?>
+
+													<li><a href="<?php echo $url; ?>"><?php echo $text; ?></a></li>
+
+												<?php endwhile; ?>
+
+											<?php endif; ?>
 
 										<?php endwhile; ?>
 

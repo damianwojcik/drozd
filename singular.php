@@ -141,6 +141,11 @@
 
 					<aside class="animation-element" data-anim="slide_top">
 						<!-- =================================================
+							section aside-map
+						================================================== -->
+						<?php get_template_part("partials/aside", "map"); ?>
+						
+						<!-- =================================================
 							section thumb-listing
 						================================================== -->
 						<?php get_template_part("partials/aside", "thumb_listing"); ?>

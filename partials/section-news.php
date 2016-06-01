@@ -18,7 +18,7 @@
 
     $featured_category = get_field('featured_articles_category', 'option');
 
-    $cat_args = array( 'posts_per_page' => 3, 'category' => $featured_category );
+    $cat_args = array( 'posts_per_page' => 7, 'category' => $featured_category );
 
     $posts_array = get_posts( $cat_args );
 
@@ -62,11 +62,11 @@
 
   </article>
 
-  <div class="row row-articles animation-element" data-anim="slide_top">
+  <div class="row-tight row-articles animation-element" data-anim="slide_top">
 
   <?php
 
-    for ($i = 1; $i <= 2; $i++){
+    for ($i = 1; $i <= 6; $i++){
 
       $trimmed_content = wp_trim_words( $posts_array[$i]->post_content );
       $thumbnail = wp_get_attachment_image_src( get_post_thumbnail_id($posts_array[$i]), 'large' );

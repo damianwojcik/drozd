@@ -20,6 +20,12 @@
 					<!-- =================================================
 							section intro
 					================================================== -->
+					<?php get_template_part("partials/section", "mobile-map"); ?>
+
+
+					<!-- =================================================
+							section intro
+					================================================== -->
 					<?php get_template_part("partials/section", "intro"); ?>
 
 
@@ -40,6 +46,11 @@
 				<div class="span4 aside">
 
 					<aside class="animation-element" data-anim="slide_top">
+						<!-- =================================================
+							section aside-map
+						================================================== -->
+						<?php get_template_part("partials/aside", "map"); ?>
+
 
 						<!-- =================================================
 							section thumb-listing
