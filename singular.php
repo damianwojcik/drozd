@@ -133,11 +133,11 @@
 					<?php endif; ?>
 
 
-						<!-- =================================================
-							section related-articles
-						================================================== -->
-						<?php get_template_part("partials/aside", "related_articles"); ?>
-
+					<!-- =================================================
+				            module featured_articles
+				    ================================================== -->
+				    <?php get_template_part("partials/module", "featured_articles"); ?>
+					
 
 					</main>
 
