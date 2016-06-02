@@ -38,6 +38,7 @@ $translate = array(
                 $title = get_field('title');
                 $workdays = get_field('workdays');
 
+                if($workdays){
 
                 //displays doctors working on current day
                 foreach ($workdays as $days) {
@@ -89,9 +90,11 @@ $translate = array(
 
                         </li>
 
-                    <?php }//end if ?>
+                        <?php }//end if ?>
 
-                <?php }//end foreach workdays ?>
+                    <?php }//end foreach workdays ?>
+
+                <?php }//end if workdays ?>
 
             <?php } // END foreach post ?>
 

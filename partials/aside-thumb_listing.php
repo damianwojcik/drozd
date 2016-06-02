@@ -32,62 +32,65 @@
 										$title = get_field('title');
 										$workdays = get_field('workdays');
 
+										if($workdays){
 
-										//displays doctors working on current day
-										foreach ($workdays as $days) {
+											//displays doctors working on current day
+											foreach ($workdays as $days) {
 
 
-											$dayAndHour = ' ' . $days['days'] . $days['hours'];
+												$dayAndHour = ' ' . $days['days'] . $days['hours'];
 
-											$translate = array(
-												"Poniedziałek" => "Monday",
-												"Wtorek" => "Tuesday",
-												"Środa" => "Wednesday",
-												"Czwartek" => "Thursday",
-												"Piątek" => "Friday",
-												"Sobota" => "Saturday",
-												"Niedziela" => "Sunday"
-											);
+												$translate = array(
+													"Poniedziałek" => "Monday",
+													"Wtorek" => "Tuesday",
+													"Środa" => "Wednesday",
+													"Czwartek" => "Thursday",
+													"Piątek" => "Friday",
+													"Sobota" => "Saturday",
+													"Niedziela" => "Sunday"
+												);
 
-											$daysOfDoctor = strtr($dayAndHour, $translate);
+												$daysOfDoctor = strtr($dayAndHour, $translate);
 
-											$pos = strpos($daysOfDoctor, $today);
+												$pos = strpos($daysOfDoctor, $today);
 
-											if( $pos == 1 && $counter < 3 ){ ?>
+												if( $pos == 1 && $counter < 3 ){ ?>
 
-												<?php $counter = $counter + 1; ?>
+													<?php $counter = $counter + 1; ?>
 
-												<li>
+													<li>
 
-													<a href="<?php echo get_post_type_archive_link( 'doctor' ); ?>">
+														<a href="<?php echo get_post_type_archive_link( 'doctor' ); ?>">
 
-														<?php if(!empty($photo)) { ?>
+															<?php if(!empty($photo)) { ?>
 
-															<div class="thumb-photo-wrap" style="background-image: url(<?php echo $photo; ?>);"></div>
+																<div class="thumb-photo-wrap" style="background-image: url(<?php echo $photo; ?>);"></div>
 
-														<?php }else {?>
+															<?php }else {?>
 
-															<div class="thumb-photo-wrap" style="background-image: url(<?= THEME_URL; ?>/assets/img/doctor-placeholder.jpg);"></div>
+																<div class="thumb-photo-wrap" style="background-image: url(<?= THEME_URL; ?>/assets/img/doctor-placeholder.jpg);"></div>
 
-														<?php } ?>
+															<?php } ?>
 
-														<div class="thumb-item-details">
+															<div class="thumb-item-details">
 
-															<span><?php echo $name; ?></span>
+																<span><?php echo $name; ?></span>
 
-															<h5><?php echo $title; ?></h5>
+																<h5><?php echo $title; ?></h5>
 
-															<span class="text-blue"><?php echo str_replace($today, "", $daysOfDoctor); ?></span>
+																<span class="text-blue"><?php echo str_replace($today, "", $daysOfDoctor); ?></span>
 
-														</div>
+															</div>
 
-													</a>
+														</a>
 
-												</li>
+													</li>
 
-											<?php }//end if ?>
+												<?php }//end if ?>
 
-										<?php }//end foreach workdays ?>
+											<?php }//end foreach workdays ?>
+
+										<?php }//end if workdays ?>
 
 									<?php } // END foreach post ?>
 
