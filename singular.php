@@ -70,12 +70,6 @@
 
 						<?php the_content(); ?>
 
-						<?php if( is_single() ){ ?>
-
-							<a href="<?php echo $category_link; ?>" class="btn btn-transparent btn-back">Wróć</a>
-
-						<?php } ?>
-
 
 						<!-- Gallery -->
 						<div class="gallery-wrapper">
@@ -103,15 +97,15 @@
 
 						        <?php foreach( $images as $image ): ?>
 
-			                <a href="<?php echo $image['url']; ?>" rel="lightbox">
+					                <a href="<?php echo $image['url']; ?>" rel="lightbox">
 
-		                     <img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" />
+				                     <img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" />
 
-												 <div class="color-overlay">
-													 <i class="material-icons">search</i>
-												 </div>
+										 <div class="color-overlay">
+											 <i class="material-icons">search</i>
+										 </div>
 
-			                </a>
+					                </a>
 
 						        <?php endforeach; ?>
 
@@ -132,12 +126,18 @@
 
 					<?php endif; ?>
 
+					<?php if( is_single() ){ ?>
+
+						<a href="<?php echo $category_link; ?>" class="btn btn-transparent btn-back">Wróć</a>
+
+					<?php } ?>
+
 
 					<!-- =================================================
 				            module featured_articles
 				    ================================================== -->
 				    <?php get_template_part("partials/module", "featured_articles"); ?>
-					
+
 
 					</main>
 
