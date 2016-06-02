@@ -11,7 +11,7 @@
 	//include php files
 	include("incl/general.php");
 
-	include("incl/custom_functions.php");
+	//include("incl/custom_functions.php");
 
 	include("incl/cpt.php");
 

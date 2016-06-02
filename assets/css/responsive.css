@@ -773,11 +773,45 @@
 		display: none;
 	}
 
+	ul.person-tiles li{
+		width: calc(50% - 15px);
+	}
+
+	ul.person-tiles li:nth-child(2n){
+		margin-left: 30px;
+	}
+
 	.main section.related-articles article h4{
 		font-size: 16px;
 		line-height: 24px;
 	}
 
+
+}
+
+
+@media screen and (max-width: 580px){
+
+	section.today-person{
+		padding-bottom: 0;
+	}
+	
+	ul.person-tiles li{
+		width: 100%;
+		margin-bottom: 30px;
+	}
+
+	ul.person-tiles li:nth-child(2n){
+		margin-left: 0;
+	}
+
+	ul.person-tiles li .thumb-item-details,
+	ul.person-tiles li span,
+	ul.person-tiles li h5,
+	ul.person-tiles li span.text-blue,
+	ul.person-tiles li .inner-wrap{
+		min-height: auto;
+	}
 
 }
 

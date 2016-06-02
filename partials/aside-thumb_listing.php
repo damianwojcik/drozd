@@ -8,6 +8,8 @@
 
 						$today = date("l");
 
+						$counter = 0;
+
 						?>
 
 
@@ -51,11 +53,13 @@
 
 											$pos = strpos($daysOfDoctor, $today);
 
-											if( $pos == 1 ){ ?>
+											if( $pos == 1 && $counter < 3 ){ ?>
+
+												<?php $counter = $counter + 1; ?>
 
 												<li>
 
-													<a href="<?php the_permalink(); ?>">
+													<a href="<?php echo get_post_type_archive_link( 'doctor' ); ?>">
 
 														<?php if(!empty($photo)) { ?>
 

@@ -30,7 +30,7 @@
 
 									<?php endif; ?>
 
-									<a href="http://localhost/drozd/wp-content/uploads/2016/05/certyfikat.jpg" rel="lightbox"
+									<a href="http://dev.time4digital.pl/drozd/wp-content/uploads/2016/06/PPS-Drozd-PCA-QMS15-001.jpg" rel="lightbox"
 									class="img-intro animation-element" data-anim="scale_up">
 									<img src="<?php echo $section_image['url']; ?>" alt="<?php echo $section_image['alt']; ?>" />
 								</a>

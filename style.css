@@ -2036,6 +2036,86 @@ ul.article-tiles li p{
 }
 
 
+/*section today-person*/
+section.today-person{
+    display: table;
+    width: 100%;
+    padding-bottom: 30px;
+    margin-bottom: 45px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+}
+
+
+/*person tile list*/
+ul.person-tiles{
+    display: table;
+    width: 100%;
+}
+
+ul.person-tiles li{
+    display: table;
+    width: calc(50% - 20px);
+    float: left;
+    line-height: 1;
+    margin-bottom: 15px;
+}
+
+ul.person-tiles li:nth-child(2n){
+    margin-left: 40px;
+}
+
+ul.person-tiles li .thumb-photo-wrap{
+    height: 150px;
+    float: none;
+    background-position: top;
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 100%;
+    height: 300px;
+    margin-bottom: 15px;
+}
+
+ul.person-tiles li .thumb-item-details{
+    display: block;
+    width: 100%;
+    min-height: 125px;
+}
+
+ul.person-tiles li span{
+    color: #22293b;
+    font-size: 20px;
+    line-height: 24px;
+    margin-bottom: 7px;
+    display: block;
+    min-height: 50px;
+}
+
+ul.person-tiles li h5{
+    color: #9a9a9a;
+    text-transform: uppercase;
+    font-size: 14px;
+    line-height: 20px;
+    display: block;
+    margin-bottom: 10px;
+    min-height: 40px;
+}
+
+ul.person-tiles li span.text-blue{
+    color: #2d4d98;
+    font-size: 14px;
+    line-height: 1;
+    font-weight: bold;
+    display: block;
+    min-height: auto;
+}
+
+ul.person-tiles li .inner-wrap{
+    display: block;
+    width: 100%;
+    min-height: 58px;
+}
+
+
 /*wordpress pagination*/
 .nav-links{
   display: table;
