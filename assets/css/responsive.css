@@ -137,6 +137,16 @@
 
 }
 
+@media screen and (min-width: 1024px) {
+
+	.sidebar-menu{
+		display: none !important;
+		visibility: hidden !important;
+		opacity: 0 !important;
+	}
+
+}
+
 
 @media screen and (max-width: 1024px) {
 
@@ -374,7 +384,7 @@
 	}
 
 	section.info h3{
-		font-weight: normal;
+		font-weight: 700;
 		line-height: 1;
 		margin-bottom: 12px;
 	}
@@ -548,8 +558,8 @@
 
 
 	/*buttons*/
-	.btn.btn-transparent,
-	.btn.btn-transparent:hover{
+	.home .btn.btn-transparent,
+	.home .btn.btn-transparent:hover{
 		width: 100%;
 		padding: 11px 30px;
 	}
@@ -560,8 +570,14 @@
 		padding: 16px 30px;
 	}
 
-	.btn.btn-mobile{
+	.btn.btn-mobile,
+	.btn.btn-mobile:hover{
 		display: block;
+		text-align: center;
+	}
+
+	.single main .btn.btn-mobile, .single main .btn.btn-mobile{
+		text-align: center;
 	}
 
 
@@ -843,9 +859,13 @@
 		width: 100%;
 	}
 
-	.home textarea{
+	textarea{
 		background: rgba(0, 0, 0, 0.05);
 		width: 100%;
+	}
+
+	.page-template-page-contact .textarea{
+		background: #FFF;
 	}
 
 	.home #ninja_forms_field_7{
@@ -971,6 +991,10 @@
 	section.slider .owl-carousel .owl-controls .owl-nav .owl-next::after, section.slider .owl-carousel .owl-controls .owl-nav .owl-prev::after{
 		height: 24px;
 		width: 18px;
+	}
+
+	section.slider h1.title{
+		padding: 60px 0 60px 35px;
 	}
 
 
@@ -1114,6 +1138,10 @@
 		top: auto;
 		width: 100% !important;
 		margin: 0 !important;
+	}
+
+	section.slider h1.title{
+		padding: 60px 0 60px 35px;
 	}
 
 }

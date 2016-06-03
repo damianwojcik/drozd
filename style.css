@@ -606,6 +606,10 @@ ul.children-pages{
   margin-top: -30px;
 }
 
+.page main ul.children-pages{
+    padding-left: 0;
+}
+
 ul.children-pages li{
   display: table;
   width: 100%;
@@ -1149,7 +1153,7 @@ header .header-wrap .container{
     width: 13px;
     position: absolute;
     left: -25px;
-    top: 20%;
+    top: 4px;
 }
 
 .header-wrap .top-panel ul li.email a{
@@ -1168,7 +1172,7 @@ header .header-wrap .container{
     width: 10px;
     position: absolute;
     left: -17px;
-    top: 20%;
+    top: 5px;
 }
 
 .header-wrap .top-panel ul li.phone a{
@@ -2103,9 +2107,6 @@ ul.person-tiles li .inner-wrap{
 ul.featured-articles{
     display: table;
     width: 100%;
-}
-
-ul.featured-articles{
     padding-left: 0;
     list-style-type: none;
     border-top: 1px solid rgba(0, 0, 0, 0.1);
@@ -2115,6 +2116,10 @@ ul.featured-articles{
 .home ul.featured-articles{
     margin-top: 0;
     border-top: 0;
+}
+
+.page main ul.featured-articles{
+    padding-left: 0;
 }
 
 .page ul.featured-articles li{
