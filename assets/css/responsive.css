@@ -859,12 +859,18 @@
 		width: 100%;
 	}
 
+	.btn.btn-transparent, .btn.btn-transparent:hover{
+		padding: 11px 40px;
+	}
+
 	textarea{
 		background: rgba(0, 0, 0, 0.05);
 		width: 100%;
 	}
 
-	.page-template-page-contact .textarea{
+	.page-template-page-contact input[type="text"],
+	.page-template-page-contact input[type="email"],
+	.page-template-page-contact textarea{
 		background: #FFF;
 	}
 
@@ -995,6 +1001,8 @@
 
 	section.slider h1.title{
 		padding: 60px 0 60px 35px;
+		font-size: 28px;
+		line-height: 1.2;
 	}
 
 
@@ -1122,6 +1130,10 @@
 }
 
 @media screen and (max-width: 430px){
+
+	section.slider h1.title{
+		font-size: 26px
+	}
 
 	.image-container{
 	  margin-bottom: 15px;
