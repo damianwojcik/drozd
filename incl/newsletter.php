@@ -6,10 +6,10 @@
         $password = "root";
         $dbname = "drozd";
     } else{
-        $servername = "localhost";
-        $username = "18342515_drozd";
-        $password = "H62xfWatoMbbzKJR9";
-        $dbname = "18342515_drozd";
+        $servername = DB_HOST;
+        $username = DB_USER;
+        $password = DB_PASSWORD;
+        $dbname = DB_NAME;
     }
 
     // Create connection
