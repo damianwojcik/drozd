@@ -1850,6 +1850,10 @@ footer section.footer-top ul li a:hover{
     color: #36baac;
 }
 
+footer section.footer-top ul ul{
+    display: none;
+}
+
 
 /*section footer-navigation*/
 footer section.footer-navigation .span6:first-child{
