@@ -1,5 +1,5 @@
 <?php
-	/* Template Name: Strona Poradnie */
+	/* Template Name: Strona z podstronami */
 ?>
 
 <?php get_header(); ?>
@@ -18,38 +18,39 @@
 
 					<main>
 
-            <?php $child_pages = $wpdb->get_results("SELECT *    FROM $wpdb->posts WHERE post_parent = ".$post->ID."
-            AND post_type = 'page' ORDER BY menu_order", 'OBJECT');?>
+		            <?php $child_pages = $wpdb->get_results("SELECT *    FROM $wpdb->posts WHERE post_parent = ".$post->ID."
+		            AND post_type = 'page' ORDER BY menu_order", 'OBJECT');?>
 
-            <?php if ( $child_pages ) { ?>
+					<?php if ( $child_pages ) { ?>
 
-              <ul class="children-pages">
+	              		<ul class="children-pages">
 
-                <?php $i = 1; ?>
+		                <?php $i = 1; ?>
 
-                <?php foreach ( $child_pages as $pageChild ) : setup_postdata( $pageChild ); ?>
+		                	<?php foreach ( $child_pages as $pageChild ) : setup_postdata( $pageChild ); ?>
 
-                  <li>
+								<li>
 
-                    <a href="<?php echo  get_permalink($pageChild->ID); ?>" rel="bookmark" title="<?php echo $pageChild->post_title; ?>">
-                      <span class="page-enum"><?php if($i<10){ echo '0'; } ?><?php echo $i; echo '.'; ?></span>
-                      <span class="page-name"><?php echo $pageChild->post_title; ?></span>
-                    </a>
+								<a href="<?php echo  get_permalink($pageChild->ID); ?>" rel="bookmark" title="<?php echo $pageChild->post_title; ?>">
+								  <span class="page-enum"><?php if($i<10){ echo '0'; } ?><?php echo $i; echo '.'; ?></span>
+								  <span class="page-name"><?php echo $pageChild->post_title; ?></span>
+								</a>
 
-                  </li>
+								</li>
 
-                  <?php $i = $i+1; ?>
+		              		<?php $i = $i+1; ?>
 
-                <?php endforeach; ?>
+			            <?php endforeach; ?>
 
-              </ul>
+              			</ul>
 
-            <?php } ?>
+					<?php } ?>
 
 
 					</main>
 
 				</div>
+				<!-- END span8 main -->
 
 
 				<div class="span4 aside">
@@ -77,6 +78,7 @@
 					</aside>
 
 				</div>
+				<!-- END span4 aside -->
 
 			</div>
 
