@@ -336,7 +336,7 @@ aside .image-placeholder i{
     text-align: center;
     width: 85%;
     margin: auto;
-    min-height: 350px;
+    min-height: 390px;
 }
 
 .featured-box h2{
@@ -359,6 +359,7 @@ aside .image-placeholder i{
     padding-left: 45px;
     width: 90%;
     min-height: 108px;
+    max-height: 180px;
 }
 
 .featured-box ul li a{
@@ -831,7 +832,7 @@ section.related-articles article p{
 --------------------------------------------------------------- */
 .sidebar-menu{
     position: absolute;
-    right: 0;
+    right: -320px;
     top: 0;
     bottom: 0;
     width: 320px;
@@ -841,6 +842,12 @@ section.related-articles article p{
     padding: 35px 45px;
     border: 0;
     box-shadow: none;
+    display: none;
+}
+
+.sidebar-menu.opened{
+    right: 0;
+    display: block;
 }
 
 .sidebar-menu #mobile-menu{

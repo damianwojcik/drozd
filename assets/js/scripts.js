@@ -87,7 +87,7 @@ jQuery(document).ready(function($){
 
 		btn.on('click', function(){
 			$body.toggleClass('menu-open');
-			sidebar_menu.toggleClass('visible');
+			sidebar_menu.toggleClass('opened');
 		});
 
 		mobile_menu.find('li.menu-item-has-children').each(function(){
