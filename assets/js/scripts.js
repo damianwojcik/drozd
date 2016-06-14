@@ -18,7 +18,7 @@ jQuery(document).ready(function($){
 	$('.image-container').justifiedGallery({
     rowHeight : 170,
     margins : 10,
-		lastRow : 'nojustify'
+	lastRow : 'nojustify'
 	});
 
 
@@ -41,6 +41,7 @@ jQuery(document).ready(function($){
 	}
 
 
+	//animations
 	function scroll_based_animations(){
 
 		var $elements = $('.animation-element'),
@@ -76,6 +77,7 @@ jQuery(document).ready(function($){
 	}
 
 
+	//mobile menu
 	function mobile_menu(){
 
 		var btn = $('#menu-toggle, .sidebar-btn'),
