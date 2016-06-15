@@ -72,7 +72,7 @@ $translate = array(
 
                                 <?php }else {?>
 
-                                    <div class="thumb-photo-wrap b-lazy" data-src="<?= THEME_URL; ?>/assets/img/doctor-placeholder.jpg)"></div>
+                                    <div class="thumb-photo-wrap b-lazy" data-src="<?= THEME_URL; ?>/assets/img/doctor-placeholder.jpg"></div>
 
                                 <?php } ?>
 

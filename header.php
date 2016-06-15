@@ -40,6 +40,12 @@
 
 
 <!-- =================================================
+	section cookies
+================================================== -->
+<?php get_template_part("partials/section", "cookies"); ?>
+
+
+<!-- =================================================
 		sidebar-menu MOBILE NAV
 ================================================== -->
 <?php get_template_part("partials/section", "mobile_nav"); ?>
