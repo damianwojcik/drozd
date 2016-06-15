@@ -44,7 +44,7 @@
 
 								<?php if( !empty($post_thumbnail) ){ ?>
 
-									<div class="article-heading-img-wrap" style="background-image: url(<?php echo $post_thumbnail['0']; ?>);"></div>
+									<div class="article-heading-img-wrap b-lazy" data-src="<?php echo $post_thumbnail['0']; ?>"></div>
 
 								<?php } ?>
 
@@ -65,8 +65,8 @@
 						<?php endif; ?>
 						<!-- END post type template -->
 
-						<!-- BEGIN page type template -->
 
+						<!-- BEGIN page type template -->
 
 						<?php the_content(); ?>
 
@@ -99,7 +99,7 @@
 
 					                <a href="<?php echo $image['url']; ?>" rel="lightbox">
 
-				                     <img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" />
+				                     <img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" />
 
 										 <div class="color-overlay">
 											 <i class="material-icons">search</i>

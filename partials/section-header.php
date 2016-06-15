@@ -75,7 +75,7 @@
 
 									<?php if( !empty($logo) ): ?>
 
-										<img class="logo" src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
+										<img class="logo b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?php echo $logo['url']; ?>" alt="<?php echo $logo['alt']; ?>">
 
 									<?php endif; ?>
 

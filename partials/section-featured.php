@@ -25,7 +25,7 @@
 
 									<?php if( !empty($image) ): ?>
 
-										<a href="#"><img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"></a>
+										<a href="#"><img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>"></a>
 
 									<?php endif; ?>
 

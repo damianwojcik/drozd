@@ -68,11 +68,11 @@ $translate = array(
 
                                 <?php if(!empty($photo)) { ?>
 
-                                    <div class="thumb-photo-wrap" style="background-image: url(<?php echo $photo; ?>);"></div>
+                                    <div class="thumb-photo-wrap b-lazy" data-src="<?php echo $photo; ?>"></div>
 
                                 <?php }else {?>
 
-                                    <div class="thumb-photo-wrap" style="background-image: url(<?= THEME_URL; ?>/assets/img/doctor-placeholder.jpg);"></div>
+                                    <div class="thumb-photo-wrap b-lazy" data-src="<?= THEME_URL; ?>/assets/img/doctor-placeholder.jpg)"></div>
 
                                 <?php } ?>
 

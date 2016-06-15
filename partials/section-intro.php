@@ -32,7 +32,7 @@
 
 									<a href="http://dev.time4digital.pl/drozd/wp-content/uploads/2016/06/PPS-Drozd-PCA-QMS15-001.jpg" rel="lightbox"
 									class="img-intro animation-element" data-anim="scale_up">
-									<img src="<?php echo $section_image['url']; ?>" alt="<?php echo $section_image['alt']; ?>" />
+									<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?php echo $section_image['url']; ?>" alt="<?php echo $section_image['alt']; ?>" />
 								</a>
 
 									<a href="<?php echo get_page_link(18); ?>" class="btn btn-green btn-large">Czytaj więcej</a>

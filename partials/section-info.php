@@ -1,4 +1,4 @@
-	
+
 	<section class="info animation-element" data-anim="slide_top">
 
 		<div class="container">
@@ -25,7 +25,7 @@
 
 									<?php if( !empty($image) ): ?>
 
-										<img src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
+										<img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?php echo $image['url']; ?>" alt="<?php echo $image['alt']; ?>">
 
 									<?php endif; ?>
 
@@ -63,4 +63,3 @@
 
 	</section>
 	<!-- END section info -->
-	

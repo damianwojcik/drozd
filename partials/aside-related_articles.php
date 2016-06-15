@@ -26,7 +26,7 @@
 
 										<a href="<?php the_permalink(); ?>" class="tile-img-link">
 
-						          <div class="tile-img"<?php if( !empty($thumbnail) ){ ?> style="background-image: url(<?php echo $thumbnail[0]; ?>)" <?php } ?>>
+						          <div class="tile-img b-lazy"<?php if( !empty($thumbnail) ){ ?> data-src="<?php echo $thumbnail[0];?>" <?php } ?>>
 
 						            <?php if( empty($thumbnail) ){ ?>
 
