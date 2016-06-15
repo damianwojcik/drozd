@@ -99,7 +99,7 @@
 
 					                <a href="<?php echo $image['url']; ?>" rel="lightbox">
 
-				                     <img class="b-lazy" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" data-src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" />
+				                     <img src="<?php echo $image['sizes']['medium']; ?>" alt="<?php echo $image['alt']; ?>" />
 
 										 <div class="color-overlay">
 											 <i class="material-icons">search</i>
